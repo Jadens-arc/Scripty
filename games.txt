@@ -1,2 +1,0 @@
-minecraft, 7.99, Yes, ios
-fortnite, free, Yes, ios

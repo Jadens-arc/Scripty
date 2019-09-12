@@ -28,8 +28,11 @@ def save():
 def run():
     save()
     os.system('clear')
-    os.system('python3 ' + str(fileLine[:-1]))
-
+    if '.py' in fileLine:
+        os.system('python3 ' + str(fileLine[:-1]))
+    elif '.java' in fileLine:
+        os.system('javac ' + str(fileLine[:-1]))
+        os.system('java ' + str(fileLine[:-1]))
 def cd():
     fileWindow = Tk()
     fileWindow.geometry("550x125")

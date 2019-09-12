@@ -1,4 +1,4 @@
-
+# By Jaden Arceneaux arceneauxJaden@gmail.com
 from tkinter import *
 from tkinter import messagebox
 import os
@@ -8,36 +8,49 @@ os.system('clear')
 window = Tk()
 window.geometry("550x350")
 window.resizable(0,0)
-window.title("Code With Jaden")
-try:
-    window.iconbitmap('favicon.ico')
-except:
-    pass
+window.title("Code With Jaden") 
 currDir = open('directory.txt', 'r')
+lineList = []
 for file in currDir:
-    currDir = file
-currDir = currDir[:-1]
-currFile = open(str(currDir))
-
+    lineList.append(file)
+fileLine = lineList[0]
+currFile = open(str(fileLine[:-1]))
 editor = Text(window, wrap = CHAR, width = 68)
 for line in currFile:
     editor.insert(INSERT, line)
 editor.grid(column = 0, row = 1, columnspan = 3)
 
 def save():
-    preSave = editor.get('1.0', END)
-    file = open(str(currDir), "w")
-    file.write(preSave)
-    
+    file = open(str(fileLine[:-1]), "w")
+    file.write(editor.get('1.0', END))
+    file.close()
+
 def run():
     save()
     os.system('clear')
-    result = os.system('python3 ' + str(currDir))
-    
+    os.system('python3 ' + str(fileLine[:-1]))
+
 def cd():
     fileWindow = Tk()
-    fileWindow.geometry("550x350")
-    
+    fileWindow.geometry("550x125")
+    fileWindow.resizable(0,0)
+    fileWindow.title("Change Working File")
+
+    dirSaveBtn = Button(fileWindow, text = "Save", command = lambda: saveDir())
+    dirSaveBtn.pack()
+
+    dirEditor = Text(fileWindow)
+    dirEditor.pack()
+
+    def saveDir():
+        messagebox.showinfo("wait", "please reload to apply changes")
+        dirFileSave = open("directory.txt", "w")
+        dirFileSave.write(dirEditor.get('1.0', END))
+
+    currDir = open('directory.txt', 'r')
+    for file in currDir:
+        dirEditor.insert(INSERT, file)
+
     fileWindow.mainloop()
 
 runBtn = Button(window, text = "Run", command = lambda: run())
@@ -50,3 +63,5 @@ fileBtn = Button(window, text = "File", command = lambda: cd())
 fileBtn.grid(column = 2, row = 0)
 
 window.mainloop()
+
+

@@ -15,10 +15,10 @@ for file in currDir:
     lineList.append(file)
 fileLine = lineList[0]
 currFile = open(str(fileLine[:-1]))
-editor = Text(window, wrap = CHAR, width = 68)
+editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
-editor.grid(column = 0, row = 1, columnspan = 3)
+editor.place(rely = 0.1, relx = 0, relheight = 0.9, relwidth = 1.0)
 
 def save():
     file = open(str(fileLine[:-1]), "w")
@@ -57,14 +57,12 @@ def cd():
     fileWindow.mainloop()
 
 runBtn = Button(window, text = "Run", command = lambda: run())
-runBtn.grid(column = 0, row = 0)
+runBtn.place(relx = 0, rely = 0, relwidth = 0.333, relheight = 0.1)
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
-saveBtn.grid(column = 1, row = 0)
+saveBtn.place(relx = 0.333, rely = 0, relwidth = 0.333, relheight = 0.1)
 
 fileBtn = Button(window, text = "File", command = lambda: cd())
-fileBtn.grid(column = 2, row = 0)
+fileBtn.place(relx = 0.666, rely = 0, relwidth = 0.333, relheight = 0.1)
 
 window.mainloop()
-
-

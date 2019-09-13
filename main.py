@@ -2,6 +2,8 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+import subprocess
+from subprocess import STDOUT, PIPE
 
 os.system('clear')
 
@@ -24,6 +26,16 @@ for line in currFile:
     editor.insert(INSERT, line)
 editor.place(rely = 0.1, relx = 0, relheight = 0.9, relwidth = 1.0)
 
+def compile_java(java_file):
+    cmd = 'javac ' + java_file 
+    proc = subprocess.Popen(cmd, shell=True)
+
+def execute_java (java_file):
+    cmd=['java', java_file]
+    proc=subprocess.Popen(cmd, stdout = PIPE, stderr = STDOUT)
+    input = subprocess.Popen(cmd, stdin = PIPE)
+    print(proc.stdout.read())
+
 def save():
     file = open(str(fileLine[:-1]), "w")
     file.write(editor.get('1.0', END))
@@ -35,8 +47,8 @@ def run():
     if '.py' in fileLine:
         os.system('python3 ' + str(fileLine[:-1]))
     elif '.java' in fileLine:
-        os.system('javac ' + str(fileLine[:-1]))
-        os.system('java ' + str(fileLine[:-1]))
+        compile_java(str(fileLine[:-1]))
+        execute_java(str(fileLine[:-6]))
 def cd():
     fileWindow = Tk()
     fileWindow.geometry("550x125")
@@ -70,3 +82,4 @@ fileBtn = Button(window, text = "File", command = lambda: cd())
 fileBtn.place(relx = 0.666, rely = 0, relwidth = 0.333, relheight = 0.1)
 
 window.mainloop()
+

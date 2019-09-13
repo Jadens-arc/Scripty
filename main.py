@@ -7,7 +7,6 @@ os.system('clear')
 
 window = Tk()
 window.geometry("550x350")
-window.resizable(0,0)
 window.title("Code With Jaden") 
 currDir = open('directory.txt', 'r')
 lineList = []

@@ -13,7 +13,12 @@ lineList = []
 for file in currDir:
     lineList.append(file)
 fileLine = lineList[0]
-currFile = open(str(fileLine[:-1]))
+try:
+    currFile = open(str(fileLine[:-1]))
+except:
+    newFile = open(str(fileLine[:-1]), "w")
+    newFile.close()
+    currFile = open(str(fileLine[:-1]))
 editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)

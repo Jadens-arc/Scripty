@@ -24,10 +24,10 @@ except:
 editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
-editor.place(rely = 0.1, relx = 0, relheight = 0.9, relwidth = 1.0)
+editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
 
 def compile_java(java_file):
-    cmd = 'javac ' + java_file 
+    cmd = 'javac ' + java_file
     proc = subprocess.Popen(cmd, shell=True)
 
 def execute_java (java_file):
@@ -64,7 +64,7 @@ def cd():
     def saveDir():
         messagebox.showinfo("wait", "please reload to apply changes")
         dirFileSave = open("directory.txt", "w")
-        dirFileSave.write(dirEditor.get('1.0', END))
+        dirFileSave.write(dirEditor.get('1.0', END) + '\n')
 
     currDir = open('directory.txt', 'r')
     for file in currDir:
@@ -73,13 +73,13 @@ def cd():
     fileWindow.mainloop()
 
 runBtn = Button(window, text = "Run", command = lambda: run())
-runBtn.place(relx = 0, rely = 0, relwidth = 0.333, relheight = 0.1)
+runBtn.place(relx = 0, rely = 0, relwidth = 0.333, relheight = 0.07)
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
-saveBtn.place(relx = 0.333, rely = 0, relwidth = 0.333, relheight = 0.1)
+saveBtn.place(relx = 0.333, rely = 0, relwidth = 0.333, relheight = 0.07)
 
 fileBtn = Button(window, text = "File", command = lambda: cd())
-fileBtn.place(relx = 0.666, rely = 0, relwidth = 0.333, relheight = 0.1)
+fileBtn.place(relx = 0.666, rely = 0, relwidth = 0.333, relheight = 0.07)
 
 window.mainloop()
 

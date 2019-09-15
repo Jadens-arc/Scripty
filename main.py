@@ -9,7 +9,7 @@ os.system('clear')
 
 window = Tk()
 window.geometry("550x350")
-window.title("Code With Jaden") 
+window.title("Code With Jaden")
 currDir = open('directory.txt', 'r')
 lineList = []
 for file in currDir:
@@ -41,6 +41,26 @@ def save():
     file.write(editor.get('1.0', END))
     file.close()
 
+def saveAs():
+    saveAsWin = Tk()
+    saveAsWin.geometry("550x125")
+    saveAsWin.resizable(0,0)
+    saveAsWin.title("Save As")
+
+    def saveName():
+        saveAsLoca = saveAsEditor.get('1.0', END)
+        file = open(saveAsLoca[:-1], 'w')
+        file.write(editor.get('1.0', END))
+        file.close()
+
+    saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
+    saveAsBtn.pack()
+
+    saveAsEditor = Text(saveAsWin)
+    saveAsEditor.pack()
+
+    saveAsWin.mainloop()
+
 def run():
     save()
     os.system('clear')
@@ -50,6 +70,8 @@ def run():
         compile_java(str(fileLine[:-1]))
         execute_java(str(fileLine[:-6]))
 def cd():
+    os.system('ls')
+
     fileWindow = Tk()
     fileWindow.geometry("550x125")
     fileWindow.resizable(0,0)
@@ -73,13 +95,20 @@ def cd():
     fileWindow.mainloop()
 
 runBtn = Button(window, text = "Run", command = lambda: run())
-runBtn.place(relx = 0, rely = 0, relwidth = 0.333, relheight = 0.07)
+runBtn.place(relx = 0, rely = 0, relwidth = 0.25, relheight = 0.07)
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
-saveBtn.place(relx = 0.333, rely = 0, relwidth = 0.333, relheight = 0.07)
+saveBtn.place(relx = 0.25, rely = 0, relwidth = 0.25, relheight = 0.07)
+
+saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
+saveAsBtn.place(relx = 0.50, rely = 0, relwidth = 0.25, relheight = 0.07)
 
 fileBtn = Button(window, text = "File", command = lambda: cd())
-fileBtn.place(relx = 0.666, rely = 0, relwidth = 0.333, relheight = 0.07)
+fileBtn.place(relx = 0.75, rely = 0, relwidth = 0.25, relheight = 0.07)
+
 
 window.mainloop()
+
+
+
 

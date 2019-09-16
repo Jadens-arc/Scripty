@@ -52,6 +52,12 @@ def saveAs():
         saveAsLoca = saveAsEditor.get('1.0', END)
         file = open(saveAsLoca[:-1], 'w')
         file.write(editor.get('1.0', END))
+
+        dirFileSave = open("directory.txt", "w")
+        dirFileSave.write(saveAsEditor.get('1.0', END) + '\n')
+
+        window.title(saveAsEditor.get('1.0', END)[:-1])
+
         file.close()
 
     saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
@@ -95,20 +101,32 @@ def cd():
 
     fileWindow.mainloop()
 
+def settings():
+    settingsWin = Tk()
+    settingsWin.geometry("350x560")
+    settingsWin.resizable(0,0)
+    settingsWin.title("Settings")
+    settingsWin.mainloop()
+
 runBtn = Button(window, text = "Run", command = lambda: run())
-runBtn.place(relx = 0, rely = 0, relwidth = 0.25, relheight = 0.07)
+runBtn.place(relx = 0, rely = 0, relwidth = 0.225, relheight = 0.07)
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
-saveBtn.place(relx = 0.25, rely = 0, relwidth = 0.25, relheight = 0.07)
+saveBtn.place(relx = 0.225, rely = 0, relwidth = 0.225, relheight = 0.07)
 
 saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
-saveAsBtn.place(relx = 0.50, rely = 0, relwidth = 0.25, relheight = 0.07)
+saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 
 fileBtn = Button(window, text = "File", command = lambda: cd())
-fileBtn.place(relx = 0.75, rely = 0, relwidth = 0.25, relheight = 0.07)
+fileBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
+settingsBtn = Button(window, text = "⚙️", command = lambda: settings())
+settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 window.mainloop()
+
+
+
 
 
 

@@ -9,7 +9,6 @@ os.system('clear')
 
 window = Tk()
 window.geometry("550x350")
-window.title("Code With Jaden")
 currDir = open('directory.txt', 'r')
 lineList = []
 for file in currDir:
@@ -25,6 +24,8 @@ editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
 editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
+
+window.title(str(fileLine[:-1]))
 
 def compile_java(java_file):
     cmd = 'javac ' + java_file

@@ -78,30 +78,8 @@ def run():
     elif '.java' in fileLine:
         compile_java(str(fileLine))
         execute_java(str(fileLine[:-5]))
-def cd():
-    os.system('ls')
-
-    fileWindow = Tk()
-    fileWindow.geometry("550x125")
-    fileWindow.resizable(0,0)
-    fileWindow.title("Change Working File")
-
-    dirSaveBtn = Button(fileWindow, text = "Save", command = lambda: saveDir())
-    dirSaveBtn.pack()
-
-    dirEditor = Text(fileWindow)
-    dirEditor.pack()
-
-    def saveDir():
-        messagebox.showinfo("wait", "please reload to apply changes")
-        dirFileSave = open("directory.txt", "w")
-        dirFileSave.write(dirEditor.get('1.0', END) + '\n')
-
-    currDir = open('directory.txt', 'r')
-    for file in currDir:
-        dirEditor.insert(INSERT, file)
-
-    fileWindow.mainloop()
+def clear():
+    os.system('clear')
 
 def settings():
     settingsWin = Tk()
@@ -119,13 +97,14 @@ saveBtn.place(relx = 0.225, rely = 0, relwidth = 0.225, relheight = 0.07)
 saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
 saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 
-fileBtn = Button(window, text = "File", command = lambda: cd())
-fileBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
+clearBtn = Button(window, text = "Clear", command = lambda: clear())
+clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
 settingsBtn = Button(window, text = "⚙", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 window.mainloop()
+
 
 
 

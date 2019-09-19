@@ -1,31 +1,34 @@
+# An open-source IDE for python and java
 # By Jaden Arceneaux arceneauxJaden@gmail.com
+# Feel free to change code as you feel
+
 from tkinter import *
 from tkinter import messagebox
 import os
 import subprocess
 from subprocess import STDOUT, PIPE
+import json
+import sys
 
 os.system('clear')
 
 window = Tk()
 window.geometry("550x350")
-currDir = open('directory.txt', 'r')
-lineList = []
-for file in currDir:
-    lineList.append(file)
-fileLine = lineList[0]
+
+fileLine = str(sys.argv[-1])
+
 try:
-    currFile = open(str(fileLine[:-1]))
+    currFile = open(str(fileLine))
 except:
-    newFile = open(str(fileLine[:-1]), "w")
+    newFile = open(str(fileLine), "w")
     newFile.close()
-    currFile = open(str(fileLine[:-1]))
+    currFile = open(str(fileLine))
 editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
 editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
 
-window.title(str(fileLine[:-1]))
+window.title(str(fileLine))
 
 def compile_java(java_file):
     cmd = 'javac ' + java_file
@@ -38,7 +41,7 @@ def execute_java (java_file):
     print(proc.stdout.read())
 
 def save():
-    file = open(str(fileLine[:-1]), "w")
+    file = open(str(fileLine), "w")
     file.write(editor.get('1.0', END))
     file.close()
 
@@ -53,8 +56,7 @@ def saveAs():
         file = open(saveAsLoca[:-1], 'w')
         file.write(editor.get('1.0', END))
 
-        dirFileSave = open("directory.txt", "w")
-        dirFileSave.write(saveAsEditor.get('1.0', END) + '\n')
+        fileLine = saveAsLoca[:-1]
 
         window.title(saveAsEditor.get('1.0', END)[:-1])
 
@@ -72,10 +74,10 @@ def run():
     save()
     os.system('clear')
     if '.py' in fileLine:
-        os.system('python3 ' + str(fileLine[:-1]))
+        os.system('python3 ' + str(fileLine))
     elif '.java' in fileLine:
-        compile_java(str(fileLine[:-1]))
-        execute_java(str(fileLine[:-6]))
+        compile_java(str(fileLine))
+        execute_java(str(fileLine[:-5]))
 def cd():
     os.system('ls')
 
@@ -120,10 +122,14 @@ saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 fileBtn = Button(window, text = "File", command = lambda: cd())
 fileBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
-settingsBtn = Button(window, text = "⚙️", command = lambda: settings())
+settingsBtn = Button(window, text = "⚙", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 window.mainloop()
+
+
+
+
 
 
 

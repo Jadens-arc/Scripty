@@ -1,5 +1,7 @@
 {
     "dark-mode": false,
     "auto-indent": true,
-    "indent-spacing": 4
+    "indent-spacing": 4,
+    "font-color": "black"
 }
+

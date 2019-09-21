@@ -1,7 +1,6 @@
 # An open-source IDE for python and java
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
-
 from tkinter import *
 from tkinter import messagebox
 import os
@@ -15,6 +14,9 @@ os.system('clear')
 window = Tk()
 window.geometry("550x350")
 
+
+
+
 fileLine = str(sys.argv[-1])
 
 try:
@@ -27,6 +29,9 @@ editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
 editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
+
+
+        
 
 window.title(str(fileLine))
 
@@ -103,16 +108,18 @@ clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 settingsBtn = Button(window, text = "⚙", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
+with open('Config.json', 'r') as configFile:
+    configFile = configFile.read()
+    configFile = json.loads(configFile)
+    if configFile["dark-mode"] == True:
+        window.configure(background='black')
+        editor.configure(background='black', foreground = configFile["font-color"])
+        settingsBtn.configure(background='black', foreground = configFile["font-color"])
+        clearBtn.configure(background='black', foreground = configFile["font-color"])
+        saveAsBtn.configure(background='black', foreground = configFile["font-color"])
+        runBtn.configure(background='black', foreground = configFile["font-color"])
+        saveBtn.configure(background='black', foreground = configFile["font-color"])
+
 window.mainloop()
-
-
-
-
-
-
-
-
-
-
 
 

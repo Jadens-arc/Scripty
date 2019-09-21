@@ -111,7 +111,7 @@ settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 with open('Config.json', 'r') as configFile:
     configFile = configFile.read()
     configFile = json.loads(configFile)
-    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
     clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
     saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
@@ -119,6 +119,7 @@ with open('Config.json', 'r') as configFile:
     saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
 
 
 

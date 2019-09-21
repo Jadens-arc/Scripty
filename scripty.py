@@ -111,15 +111,14 @@ settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 with open('Config.json', 'r') as configFile:
     configFile = configFile.read()
     configFile = json.loads(configFile)
-    if configFile["dark-mode"] == True:
-        window.configure(background='black')
-        editor.configure(background='black', foreground = configFile["font-color"])
-        settingsBtn.configure(background='black', foreground = configFile["font-color"])
-        clearBtn.configure(background='black', foreground = configFile["font-color"])
-        saveAsBtn.configure(background='black', foreground = configFile["font-color"])
-        runBtn.configure(background='black', foreground = configFile["font-color"])
-        saveBtn.configure(background='black', foreground = configFile["font-color"])
+    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
 
 

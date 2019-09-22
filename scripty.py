@@ -31,8 +31,6 @@ for line in currFile:
 editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
 
 
-        
-
 window.title(str(fileLine))
 
 def compile_java(java_file):
@@ -137,6 +135,11 @@ settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 with open('Config.json', 'r') as configFile:
     configFile = configFile.read()
     configFile = json.loads(configFile)
+    def tab(arg):
+        editor.insert(INSERT, " " * configFile["indent-spacing"])
+        return 'break'
+    editor.bind("<Tab>", tab)
+
     editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
@@ -149,6 +152,8 @@ with open('Config.json', 'r') as configFile:
     saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
+
 
 
 

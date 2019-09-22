@@ -14,9 +14,6 @@ os.system('clear')
 window = Tk()
 window.geometry("550x350")
 
-
-
-
 fileLine = str(sys.argv[-1])
 
 try:
@@ -74,6 +71,14 @@ def saveAs():
     with open('Config.json', 'r') as configFile:
         configFile = configFile.read()
         configFile = json.loads(configFile)
+        def tab(arg):
+            saveAsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+            return 'break'
+        saveAsEditor.bind("<Tab>", tab)
+
+    with open('Config.json', 'r') as configFile:
+        configFile = configFile.read()
+        configFile = json.loads(configFile)
         saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
         saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     saveAsWin.mainloop()
@@ -106,6 +111,13 @@ def settings():
 
     settingsEditor = Text(settingsWin)
     settingsEditor.place(relx = 0, rely = 0.1, relwidth = 1.0, relheight = 0.9)
+    with open('Config.json', 'r') as configFile:
+        configFile = configFile.read()
+        configFile = json.loads(configFile)
+        def tab(arg):
+            settingsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+            return 'break'
+        settingsEditor.bind("<Tab>", tab)
 
     with open('Config.json', 'r') as configFile:
         configFile = configFile.read()
@@ -140,7 +152,7 @@ with open('Config.json', 'r') as configFile:
         return 'break'
     editor.bind("<Tab>", tab)
 
-    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], font = (configFile["font"], configFile["font-size"]))
     settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
     clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
@@ -152,6 +164,8 @@ with open('Config.json', 'r') as configFile:
     saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
+
 
 
 

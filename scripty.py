@@ -68,11 +68,16 @@ def saveAs():
         file.close()
 
     saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
-    saveAsBtn.pack()
+    saveAsBtn.place(relx = 0, rely = 0, relwidth=1.0, relheight = 0.2)
 
     saveAsEditor = Text(saveAsWin)
-    saveAsEditor.pack()
+    saveAsEditor.place(relx = 0, rely = 0.2, relwidth=1.0, relheight = 0.8)
 
+    with open('Config.json', 'r') as configFile:
+        configFile = configFile.read()
+        configFile = json.loads(configFile)
+        saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+        saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     saveAsWin.mainloop()
 
 def run():
@@ -88,9 +93,30 @@ def clear():
 
 def settings():
     settingsWin = Tk()
-    settingsWin.geometry("350x560")
+    settingsWin.geometry("350x360")
     settingsWin.resizable(0,0)
     settingsWin.title("Settings")
+
+    def saveSettings():
+        with open('Config.json', 'w') as configFile:
+            newSettings = settingsEditor.get('1.0', END)
+            configFile.write(newSettings)
+            messagebox.showinfo("WAIT", "Please reload to apply changes")
+
+    saveSettingsBtn = Button(settingsWin, text = 'Save', command = lambda: saveSettings())
+    saveSettingsBtn.place(relx = 0, rely = 0, relwidth = 1.0, relheight = 0.1)
+
+    settingsEditor = Text(settingsWin)
+    settingsEditor.place(relx = 0, rely = 0.1, relwidth = 1.0, relheight = 0.9)
+
+    with open('Config.json', 'r') as configFile:
+        configFile = configFile.read()
+        settingsEditor.insert(INSERT, configFile)
+    with open('Config.json', 'r') as configFile:
+        configFile = json.loads(configFile.read())
+        saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+        settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+
     settingsWin.mainloop()
 
 runBtn = Button(window, text = "Run", command = lambda: run())
@@ -113,12 +139,20 @@ with open('Config.json', 'r') as configFile:
     configFile = json.loads(configFile)
     editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+
     clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+
     saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+
     runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+
     saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
+
+
+
 
 
 

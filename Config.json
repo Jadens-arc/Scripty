@@ -1,13 +1,10 @@
 {
-    "auto-indent": true,
-    "indent-spacing": 4,
-    "font-color": "green",
-    "bg-color": "black",
-    "curser-color": "green"
+"auto-indent": true, 
+"indent-spacing": 4, 
+"font-color": "white", 
+"bg-color": "grey20", 
+"curser-color": "cyan"
 }
-
-
-
 
 
 

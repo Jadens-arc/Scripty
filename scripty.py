@@ -1,6 +1,7 @@
 # An open-source IDE for python and java
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
+
 from tkinter import *
 from tkinter import messagebox
 import os
@@ -10,11 +11,21 @@ import json
 import sys
 
 os.system('clear')
+# This clears the terminal at the start of the program
 
 window = Tk()
 window.geometry("550x350")
 
+configFile = open('Config.json')
+configFile = configFile.read()
+configFile = json.loads(configFile)
+# This opens the Config.json file to get the users settings
+
 fileLine = str(sys.argv[-1])
+# This find the arument (for which file to edit) in the terminal
+
+window.title(str(fileLine))
+# This takes the file the user selected and sets it as the title
 
 try:
     currFile = open(str(fileLine))
@@ -22,45 +33,46 @@ except:
     newFile = open(str(fileLine), "w")
     newFile.close()
     currFile = open(str(fileLine))
+# This tests to see if the file the user inputed exists other wise it will create a new one
+
 editor = Text(window, wrap = CHAR)
 for line in currFile:
     editor.insert(INSERT, line)
 editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
-
-
-window.title(str(fileLine))
+# This declares the editor text box
 
 def compile_java(java_file):
     cmd = 'javac ' + java_file
     proc = subprocess.Popen(cmd, shell=True)
+    # This function compilies java code
 
 def execute_java (java_file):
     cmd=['java', java_file]
     proc=subprocess.Popen(cmd, stdout = PIPE, stderr = STDOUT)
     input = subprocess.Popen(cmd, stdin = PIPE)
     print(proc.stdout.read())
+    # This function exicutes the java code
 
 def save():
     file = open(str(fileLine), "w")
     file.write(editor.get('1.0', END))
     file.close()
+    # This function save the current file along with its changes
 
 def saveAs():
     saveAsWin = Tk()
     saveAsWin.geometry("550x125")
     saveAsWin.resizable(0,0)
     saveAsWin.title("Save As")
-
+    # This declares the save as window and its fixed size
     def saveName():
         saveAsLoca = saveAsEditor.get('1.0', END)
         file = open(saveAsLoca[:-1], 'w')
         file.write(editor.get('1.0', END))
-
         fileLine = saveAsLoca[:-1]
-
         window.title(saveAsEditor.get('1.0', END)[:-1])
-
         file.close()
+        # This function saves the location of the file the user inputed
 
     saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
     saveAsBtn.place(relx = 0, rely = 0, relwidth=1.0, relheight = 0.2)
@@ -68,19 +80,14 @@ def saveAs():
     saveAsEditor = Text(saveAsWin)
     saveAsEditor.place(relx = 0, rely = 0.2, relwidth=1.0, relheight = 0.8)
 
-    with open('Config.json', 'r') as configFile:
-        configFile = configFile.read()
-        configFile = json.loads(configFile)
-        def tab(arg):
-            saveAsEditor.insert(INSERT, " " * configFile["indent-spacing"])
-            return 'break'
-        saveAsEditor.bind("<Tab>", tab)
+    def tab(arg):
+        saveAsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+        return 'break'
+        
 
-    with open('Config.json', 'r') as configFile:
-        configFile = configFile.read()
-        configFile = json.loads(configFile)
-        saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-        saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+    saveAsEditor.bind("<Tab>", tab)
+    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
     saveAsWin.mainloop()
 
 def run():
@@ -111,21 +118,15 @@ def settings():
 
     settingsEditor = Text(settingsWin)
     settingsEditor.place(relx = 0, rely = 0.1, relwidth = 1.0, relheight = 0.9)
-    with open('Config.json', 'r') as configFile:
-        configFile = configFile.read()
-        configFile = json.loads(configFile)
-        def tab(arg):
-            settingsEditor.insert(INSERT, " " * configFile["indent-spacing"])
-            return 'break'
-        settingsEditor.bind("<Tab>", tab)
+ 
+    def tab(arg):
+        settingsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+        return 'break'
+    settingsEditor.bind("<Tab>", tab)
 
-    with open('Config.json', 'r') as configFile:
-        configFile = configFile.read()
-        settingsEditor.insert(INSERT, configFile)
-    with open('Config.json', 'r') as configFile:
-        configFile = json.loads(configFile.read())
-        saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-        settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+    settingsEditor.insert(INSERT, open('Config.json').read())
+    saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
 
     settingsWin.mainloop()
 
@@ -144,26 +145,24 @@ clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 settingsBtn = Button(window, text = "⚙", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
-with open('Config.json', 'r') as configFile:
-    configFile = configFile.read()
-    configFile = json.loads(configFile)
-    def tab(arg):
-        editor.insert(INSERT, " " * configFile["indent-spacing"])
-        return 'break'
-    editor.bind("<Tab>", tab)
 
-    editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], font = (configFile["font"], configFile["font-size"]))
-    settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+def tab(arg):
+    editor.insert(INSERT, " " * configFile["indent-spacing"])
+    return 'break'
+editor.bind("<Tab>", tab)
+editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+editor.configure(insertbackground=configFile["curser-color"])
+editor.configure(font = (configFile["font"], configFile["font-size"]))
 
-    clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-
-    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-
-    runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-
-    saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 window.mainloop()
+
+
 
 
 

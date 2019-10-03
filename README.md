@@ -8,3 +8,4 @@ requirements:
   -python3(and its built-in moduals)
   -tkinter
   -linux
+  -Java

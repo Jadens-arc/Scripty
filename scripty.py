@@ -160,7 +160,7 @@ saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 clearBtn = Button(window, text = "Clear", command = lambda: clear())
 clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
-settingsBtn = Button(window, text = "⚙", command = lambda: settings())
+settingsBtn = Button(window, text = "âš™", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 

@@ -4,11 +4,15 @@
 
 from tkinter import *
 from tkinter import messagebox
+from subprocess import STDOUT, PIPE
 import os
 import subprocess
-from subprocess import STDOUT, PIPE
 import json
 import sys
+import time
+import threading
+
+appAlive = True
 
 os.system('clear')
 # This clears the terminal at the start of the program
@@ -54,9 +58,16 @@ def execute_java (java_file):
     # This function exicutes the java code
 
 def save():
-    file = open(str(fileLine), "w")
-    file.write(editor.get('1.0', END))
-    file.close()
+    global appAlive
+    try:
+        user = editor.get('1.0', END)
+        file = open(str(fileLine), "w")
+        file.write(user)
+        file.close()
+    except:
+        appAlive = False
+        
+    
     # This function save the current file along with its changes
 
 def saveAs():
@@ -87,7 +98,8 @@ def saveAs():
 
     saveAsEditor.bind("<Tab>", tab)
     saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-    saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+    saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    saveAsEditor.configure(insertbackground=configFile["curser-color"])
     saveAsWin.mainloop()
 
 def run():
@@ -130,6 +142,12 @@ def settings():
 
     settingsWin.mainloop()
 
+def autoSave():
+    if configFile["auto-save"] == True:
+        while appAlive == True:
+            save()
+            time.sleep(configFile["auto-save-interval"])
+
 runBtn = Button(window, text = "Run", command = lambda: run())
 runBtn.place(relx = 0, rely = 0, relwidth = 0.225, relheight = 0.07)
 
@@ -142,7 +160,7 @@ saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 clearBtn = Button(window, text = "Clear", command = lambda: clear())
 clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
-settingsBtn = Button(window, text = "⚙", command = lambda: settings())
+settingsBtn = Button(window, text = "âš™", command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 
@@ -160,11 +178,10 @@ saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["
 runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
+t = threading.Thread(target = autoSave, name = "autosave1")
+
+t.start()
 window.mainloop()
-
-
-
-
 
 
 

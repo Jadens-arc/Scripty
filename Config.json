@@ -1,12 +1,26 @@
 {
 "bg-color": "grey20",
-"auto-save": false,
 "font-color": "white",
 "font": "Courier",
-"indent-spacing": 4,
-"auto-indent": true,
-"auto-save-interval": 5,
+"font-size": 15,
 "curser-color": "cyan",
-"font-size": 15
+
+
+"auto-save": true,
+"auto-save-interval": 1,
+
+"indent-spacing": 4,
+"auto-indent": true
 }
+
+
+
+
+
+
+
+
+
+
+
 

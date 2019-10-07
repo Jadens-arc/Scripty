@@ -66,7 +66,9 @@ def save():
         file.close()
     except:
         appAlive = False
-        
+
+def saveShortCut(arg):
+    save()        
     
     # This function save the current file along with its changes
 
@@ -177,7 +179,8 @@ def tab(arg):
     return 'break'
 
 editor.bind("<Tab>", tab)
-editor.bind(configFile["run-short"], runShortCut)
+editor.bind(configFile["run-shortcut"], runShortCut)
+editor.bind(configFile["save-shortcut"], saveShortCut)
 editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 editor.configure(insertbackground=configFile["curser-color"])
 editor.configure(font = (configFile["font"], configFile["font-size"]))
@@ -192,6 +195,11 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
+
 
 
 

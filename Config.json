@@ -14,8 +14,12 @@
     
     "settings-icon": "⚙",
 
-    "run-short": "<Alt-r>"
+    "run-shortcut": "<Alt-r>",
+    "save-shortcut": "<Alt-s>"
 }
+
+
+
 
 
 

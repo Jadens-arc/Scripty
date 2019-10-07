@@ -1,19 +1,24 @@
 {
-"bg-color": "grey20",
-"font-color": "white",
-"font": "Courier",
-"font-size": 15,
-"curser-color": "cyan",
+    "bg-color": "grey20",
+    "font-color": "white",
+    "font": "Courier",
+    "font-size": 15,
+    "curser-color": "cyan",
+    
+    
+    "auto-save": true,
+    "auto-save-interval": 1,
+    
+    "indent-spacing": 4,
+    "auto-indent": true,
+    
+    "settings-icon": "⚙",
 
-
-"auto-save": true,
-"auto-save-interval": 1,
-
-"indent-spacing": 4,
-"auto-indent": true,
-
-"settings-icon": "⚙"
+    "run-short": "<Alt-r>"
 }
+
+
+
 
 
 

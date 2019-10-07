@@ -10,8 +10,12 @@
 "auto-save-interval": 1,
 
 "indent-spacing": 4,
-"auto-indent": true
+"auto-indent": true,
+
+"settings-icon": "⚙"
 }
+
+
 
 
 

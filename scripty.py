@@ -102,7 +102,7 @@ def saveAs():
     saveAsEditor.configure(insertbackground=configFile["curser-color"])
     saveAsWin.mainloop()
 
-def run():
+def executeCode():
     save()
     os.system('clear')
     if '.py' in fileLine:
@@ -110,6 +110,11 @@ def run():
     elif '.java' in fileLine:
         compile_java(str(fileLine))
         execute_java(str(fileLine[:-5]))
+
+def run():
+    runThread = threading.Thread(target = executeCode, name = "runThread1")
+    runThread.start()
+
 def clear():
     os.system('clear')
 
@@ -160,10 +165,8 @@ saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
 clearBtn = Button(window, text = "Clear", command = lambda: clear())
 clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
-settingsBtn = Button(window, text = "âš™", command = lambda: settings())
+settingsBtn = Button(window, text = configFile["settings-icon"], command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
-
-
 def tab(arg):
     editor.insert(INSERT, " " * configFile["indent-spacing"])
     return 'break'
@@ -178,10 +181,13 @@ saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["
 runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
-t = threading.Thread(target = autoSave, name = "autosave1")
+autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 
-t.start()
+autoSaveThread.start()
 window.mainloop()
+
+
+
 
 
 

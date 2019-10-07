@@ -115,6 +115,10 @@ def run():
     runThread = threading.Thread(target = executeCode, name = "runThread1")
     runThread.start()
 
+def runShortCut(arg):
+    runThread = threading.Thread(target = executeCode, name = "runThread1")
+    runThread.start()
+
 def clear():
     os.system('clear')
 
@@ -167,10 +171,13 @@ clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
 
 settingsBtn = Button(window, text = configFile["settings-icon"], command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
+
 def tab(arg):
     editor.insert(INSERT, " " * configFile["indent-spacing"])
     return 'break'
+
 editor.bind("<Tab>", tab)
+editor.bind(configFile["run-short"], runShortCut)
 editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 editor.configure(insertbackground=configFile["curser-color"])
 editor.configure(font = (configFile["font"], configFile["font-size"]))
@@ -182,9 +189,10 @@ runBtn.configure(background=configFile["bg-color"], foreground = configFile["fon
 saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 
 autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
-
 autoSaveThread.start()
+
 window.mainloop()
+
 
 
 

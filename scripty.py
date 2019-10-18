@@ -14,16 +14,16 @@ import threading
 
 appAlive = True
 
+configFile = open('Config.json')
+configFile = configFile.read()
+configFile = json.loads(configFile)
+# This opens the Config.json file to get the users settings
+
 os.system('clear')
 # This clears the terminal at the start of the program
 
 window = Tk()
 window.geometry("550x350")
-
-configFile = open('Config.json')
-configFile = configFile.read()
-configFile = json.loads(configFile)
-# This opens the Config.json file to get the users settings
 
 fileLine = str(sys.argv[-1])
 # This find the arument (for which file to edit) in the terminal
@@ -39,23 +39,28 @@ except:
     currFile = open(str(fileLine))
 # This tests to see if the file the user inputed exists other wise it will create a new one
 
-editor = Text(window, wrap = CHAR)
-for line in currFile:
-    editor.insert(INSERT, line)
-editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
+if configFile['line-wrap'] == True:
+    editor = Text(window, wrap = CHAR)
+    for line in currFile:
+        editor.insert(INSERT, line)
+    editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
+else:
+    scrollbar = Scrollbar(window, orient=HORIZONTAL, background = configFile['bg-color'])
+    scrollbar.place(relx = 0, rely = 0.95, relheight = 0.05)
+
+    editor = Text(window, wrap = NONE)
+    editor.config(yscrollcommand=scrollbar.set)
+
+    scrollbar.config(command=editor.xview)
+
+    for line in currFile:
+        editor.insert(INSERT, line)
+
+    editor.place(rely = 0.07, relx = 0, relheight = 0.88, relwidth = 1.0)
+
+
+
 # This declares the editor text box
-
-def compile_java(java_file):
-    cmd = 'javac ' + java_file
-    proc = subprocess.Popen(cmd, shell=True)
-    # This function compilies java code
-
-def execute_java (java_file):
-    cmd=['java', java_file]
-    proc=subprocess.Popen(cmd, stdout = PIPE, stderr = STDOUT)
-    input = subprocess.Popen(cmd, stdin = PIPE)
-    print(proc.stdout.read())
-    # This function exicutes the java code
 
 def save():
     global appAlive
@@ -68,8 +73,7 @@ def save():
         appAlive = False
 
 def saveShortCut(arg):
-    save()        
-    
+    save()
     # This function save the current file along with its changes
 
 def saveAs():
@@ -94,7 +98,7 @@ def saveAs():
     saveAsEditor.place(relx = 0, rely = 0.2, relwidth=1.0, relheight = 0.8)
 
     def tab(arg):
-        saveAsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+        saveAsEditor.insert(INSERT, " " * configFile["python-indent-spacing"])
         return 'break'
         
 
@@ -110,8 +114,8 @@ def executeCode():
     if '.py' in fileLine:
         os.system('python3 ' + str(fileLine))
     elif '.java' in fileLine:
-        compile_java(str(fileLine))
-        execute_java(str(fileLine[:-5]))
+        os.system('javac ' + str(fileLine))
+        os.system('java ' + fileLine[:-5])
 
 def run():
     runThread = threading.Thread(target = executeCode, name = "runThread1")
@@ -175,12 +179,57 @@ settingsBtn = Button(window, text = configFile["settings-icon"], command = lambd
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
 
 def tab(arg):
-    editor.insert(INSERT, " " * configFile["indent-spacing"])
+    if '.py' in str(fileLine):
+    	editor.insert(INSERT, " " * configFile["python-indent-spacing"])
+    elif '.java' in str(fileLine):
+        editor.insert(INSERT, " " * configFile["java-indent-spacing"])
+    else:
+        editor.insert(INSERT, " " * configFile["default-indent-spacing"])
     return 'break'
+
+def paraComplete(arg):
+    editor.insert(INSERT, "()")
+    return 'break'
+
+def curlComplete(arg):
+    editor.insert(INSERT, "{}")
+    return 'break'
+
+def bracketComplete(arg):
+    editor.insert(INSERT, "[]")
+    return 'break'
+
+def arrowComplete(arg):
+    editor.insert(INSERT, "<>")
+    return 'break'
+
+def dubQuoteComplete(arg):
+    editor.insert(INSERT, '""')
+    return 'break'
+
+def singQuoteComplete(arg):
+    editor.insert(INSERT, "''")
+    return 'break'
+
+def autoIndent(arg):
+    if str(' ' * configFile["python-indent-spacing"]) in editor.get(INSERT):
+        editor.insert(INSERT, "    ")
 
 editor.bind("<Tab>", tab)
 editor.bind(configFile["run-shortcut"], runShortCut)
 editor.bind(configFile["save-shortcut"], saveShortCut)
+
+if configFile["auto-indent"] == True:
+    editor.bind("<0xff0d>", autoIndent)
+
+if configFile["auto-complete"] == True:
+    editor.bind("<0x0028>", paraComplete)
+    editor.bind("<0x08af>", curlComplete)
+    editor.bind("<0x005b>", bracketComplete)
+    editor.bind("<Shift-0x002c>", arrowComplete)
+    editor.bind("<Shift-0x0ad0>", dubQuoteComplete)
+    editor.bind("<0x0ad0>", singQuoteComplete)
+
 editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 editor.configure(insertbackground=configFile["curser-color"])
 editor.configure(font = (configFile["font"], configFile["font-size"]))
@@ -195,6 +244,38 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

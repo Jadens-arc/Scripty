@@ -2,21 +2,39 @@
     "bg-color": "grey20",
     "font-color": "white",
     "font": "Courier",
-    "font-size": 15,
+    "font-size": 14,
     "curser-color": "cyan",
-    
+    "line-wrap": true,
     
     "auto-save": true,
     "auto-save-interval": 1,
     
-    "indent-spacing": 4,
+    "python-indent-spacing": 4,
+    "java-indent-spacing": 2,
+    "default-indent-spacing": 2,
     "auto-indent": true,
     
     "settings-icon": "⚙",
 
     "run-shortcut": "<Alt-r>",
-    "save-shortcut": "<Alt-s>"
+    "save-shortcut": "<Alt-s>",
+
+    "auto-complete": false,
+
+    "run-lock": false
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

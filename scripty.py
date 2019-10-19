@@ -4,9 +4,7 @@
 
 from tkinter import *
 from tkinter import messagebox
-from subprocess import STDOUT, PIPE
 import os
-import subprocess
 import json
 import sys
 import time
@@ -117,9 +115,21 @@ def executeCode():
         os.system('javac ' + str(fileLine))
         os.system('java ' + fileLine[:-5])
 
+def enableEditor():
+    editor.configure(state=NORMAL)
+
 def run():
-    runThread = threading.Thread(target = executeCode, name = "runThread1")
-    runThread.start()
+    if configFile['run-lock'] == False:
+        runThread = threading.Thread(target = executeCode, name = "runThread1")
+        runThread.start()
+    else:
+        editor.configure(state=DISABLED)
+        runThread = threading.Thread(target = executeCode, name = "runThread1")
+        runThread.start()
+        runThread.join()
+        enableThread = threading.Thread(target = enableEditor, name = "enableThread1")
+        enableThread.start()
+        enableThread.join()
 
 def runShortCut(arg):
     runThread = threading.Thread(target = executeCode, name = "runThread1")
@@ -130,7 +140,7 @@ def clear():
 
 def settings():
     settingsWin = Tk()
-    settingsWin.geometry("350x360")
+    settingsWin.geometry("350x400")
     settingsWin.resizable(0,0)
     settingsWin.title("Settings")
 
@@ -244,6 +254,10 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
 
 
 

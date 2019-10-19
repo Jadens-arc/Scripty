@@ -21,8 +21,9 @@
 
     "auto-complete": false,
 
-    "run-lock": false
+    "run-lock": true
 }
+
 
 
 

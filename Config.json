@@ -21,7 +21,7 @@
 
     "auto-complete": false,
 
-    "run-lock": true
+    "run-lock": false
 }
 
 

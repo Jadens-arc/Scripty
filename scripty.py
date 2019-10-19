@@ -101,7 +101,7 @@ def saveAs():
         
 
     saveAsEditor.bind("<Tab>", tab)
-    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+    saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
     saveAsEditor.configure(insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
     saveAsWin.mainloop()
@@ -165,7 +165,7 @@ def settings():
     settingsEditor.bind("<Tab>", tab)
 
     settingsEditor.insert(INSERT, open('Config.json').read())
-    saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+    saveSettingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
 
     settingsWin.mainloop()
@@ -263,6 +263,7 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
 
 
 

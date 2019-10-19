@@ -1,4 +1,4 @@
-# An open-source IDE for python and java
+# An open-source IDE for python, java, and C++
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
 
@@ -263,6 +263,7 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
 
 
 

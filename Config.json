@@ -1,6 +1,7 @@
 {
     "bg-color": "grey20",
     "font-color": "white",
+    "button-color": "grey25",
     "font": "Courier",
     "font-size": 14,
     "curser-color": "cyan",
@@ -13,7 +14,7 @@
     "java-indent-spacing": 2,
     "cpp-indent-spacing": 3,
 
-    "default-indent-spacing": 2,
+    "default-indent-spacing": 4,
     "auto-indent": true,
     
     "settings-icon": "⚙",
@@ -25,6 +26,9 @@
 
     "run-lock": false
 }
+
+
+
 
 
 

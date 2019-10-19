@@ -101,9 +101,9 @@ def saveAs():
         
 
     saveAsEditor.bind("<Tab>", tab)
-    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+    saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-    saveAsEditor.configure(insertbackground=configFile["curser-color"])
+    saveAsEditor.configure(insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
     saveAsWin.mainloop()
 
 def executeCode():
@@ -165,8 +165,8 @@ def settings():
     settingsEditor.bind("<Tab>", tab)
 
     settingsEditor.insert(INSERT, open('Config.json').read())
-    saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-    settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"])
+    saveSettingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+    settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
 
     settingsWin.mainloop()
 
@@ -247,18 +247,23 @@ if configFile["auto-complete"] == True:
 
 editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 editor.configure(insertbackground=configFile["curser-color"])
-editor.configure(font = (configFile["font"], configFile["font-size"]))
+editor.configure(font = (configFile["font"], configFile["font-size"]), highlightthickness = 0, bd = 0)
 
-settingsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-clearBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-saveAsBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-runBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-saveBtn.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
+settingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+
+clearBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+
+saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+
+runBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+
+saveBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
 
 autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
 
 
 

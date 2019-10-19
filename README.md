@@ -1,20 +1,20 @@
 # scripty
-An open-source ide by Jaden Arceneaux
+An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 # usage:
 
-  $ python3 scripty.py <file name>
+  python3 scripty.py [file name]
 
 
 
 # requirements:
 
-  -python3(and its built-in moduals)
+  - Python3(and its built-in moduals)
   
-  -tkinter
+  - Tkinter
   
-  -linux
+  - Tinux
   
-  -Java
+  - Java
   
-  -C++
+  - C++

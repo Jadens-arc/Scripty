@@ -1,13 +1,18 @@
-# scripty
+# Scripty
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
-# usage:
+# Usage:
 
   python3 scripty.py [file name]
+  
+  ![](images/IMAGE1.png)
+  
+  ![](images/IMAGE2.png)
+  
+  ![](images/IMAGE3.png)
 
 
-
-# requirements:
+# Requirements:
 
   - Python3(and its built-in moduals)
   

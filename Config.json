@@ -11,6 +11,8 @@
     
     "python-indent-spacing": 4,
     "java-indent-spacing": 2,
+    "cpp-indent-spacing": 3,
+
     "default-indent-spacing": 2,
     "auto-indent": true,
     
@@ -23,6 +25,7 @@
 
     "run-lock": false
 }
+
 
 
 

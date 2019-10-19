@@ -114,6 +114,9 @@ def executeCode():
     elif '.java' in fileLine:
         os.system('javac ' + str(fileLine))
         os.system('java ' + fileLine[:-5])
+    elif '.cpp' in fileLine:
+        os.system('g++ ' + str(fileLine) + ' -o ' + fileLine[:-4])
+        os.system('./' + fileLine[:-4])
 
 def enableEditor():
     editor.configure(state=NORMAL)
@@ -157,7 +160,7 @@ def settings():
     settingsEditor.place(relx = 0, rely = 0.1, relwidth = 1.0, relheight = 0.9)
  
     def tab(arg):
-        settingsEditor.insert(INSERT, " " * configFile["indent-spacing"])
+        settingsEditor.insert(INSERT, " " * configFile["default-indent-spacing"])
         return 'break'
     settingsEditor.bind("<Tab>", tab)
 
@@ -193,6 +196,8 @@ def tab(arg):
     	editor.insert(INSERT, " " * configFile["python-indent-spacing"])
     elif '.java' in str(fileLine):
         editor.insert(INSERT, " " * configFile["java-indent-spacing"])
+    elif '.cpp' in str(fileLine):
+        editor.insert(INSERT, " " * configFile["cpp-indent-spacing"])
     else:
         editor.insert(INSERT, " " * configFile["default-indent-spacing"])
     return 'break'
@@ -254,6 +259,9 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
 
 
 

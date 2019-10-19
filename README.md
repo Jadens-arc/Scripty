@@ -2,8 +2,6 @@
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 # Usage:
-
-  python3 scripty.py [file name]
   
   ![](images/IMAGE1.png)
   

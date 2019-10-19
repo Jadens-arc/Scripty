@@ -1,4 +1,4 @@
-# Scripty
+# Scripty:
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 # Usage:

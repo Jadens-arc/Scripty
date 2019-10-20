@@ -38,7 +38,12 @@ except:
 # This tests to see if the file the user inputed exists other wise it will create a new one
 
 if configFile['line-wrap'] == True:
-    editor = Text(window, wrap = CHAR)
+    if configFile['line-wrap-type'] == 'CHAR':
+        editor = Text(window, wrap = CHAR)
+    elif configFile['line-wrap-type'] == 'WORD':
+        editor = Text(window, wrap = WORD)
+    else:
+        editor = Text(window, wrap = CHAR)
     for line in currFile:
         editor.insert(INSERT, line)
     editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
@@ -143,8 +148,7 @@ def clear():
 
 def settings():
     settingsWin = Tk()
-    settingsWin.geometry("350x400")
-    settingsWin.resizable(0,0)
+    settingsWin.geometry("350x500")
     settingsWin.title("Settings")
 
     def saveSettings():
@@ -263,6 +267,10 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
 
 
 

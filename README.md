@@ -16,7 +16,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   - Tkinter
   
-  - Tinux
+  - Linux
   
   - Java
   

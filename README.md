@@ -1,5 +1,7 @@
 # Scripty:
+
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
+
 
 # Usage:
   
@@ -8,6 +10,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
     python3 scripty.py [your file]
   
   ![](images/IMAGE3.png)
+  
   
 # Keyboard Shortcut:
   - Compile and Execute Code:
@@ -31,3 +34,4 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   - Java
   
   - C++
+

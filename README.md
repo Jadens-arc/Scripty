@@ -1,15 +1,6 @@
 # Scripty:
 
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
-
-
-# Usage:
-  
-    cd scripty
-  
-    python3 scripty.py [your file]
-  
-  ![](images/IMAGE3.png)
   
   
 # Keyboard Shortcut:
@@ -35,3 +26,19 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   - C++
 
+
+# Usage:
+  
+    cd scripty
+  
+    python3 scripty.py [your file]
+  
+  ![](images/IMAGE3.png)
+  
+  
+# Settings:
+Setting | Function
+------------ | -------------
+bg-color | the background color of the editor
+  
+  

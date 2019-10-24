@@ -12,9 +12,19 @@ import threading
 
 appAlive = True
 
-configFile = open('Config.json')
+defaultConfigFile = open('Settings/DefaultConfig.json')
+defaultConfigFile = defaultConfigFile.read()
+defaultConfigFile = json.loads(defaultConfigFile)
+
+configFile = open('Settings/Config.json')
 configFile = configFile.read()
-configFile = json.loads(configFile)
+try:
+    configFile = json.loads(configFile)
+except:
+    configFile = open('Settings/DefaultConfig.json')
+    configFile = configFile.read()
+    configFile = json.loads(configFile)
+
 # This opens the Config.json file to get the users settings
 
 os.system('clear')
@@ -152,7 +162,7 @@ def settings():
     settingsWin.title("Settings")
 
     def saveSettings():
-        with open('Config.json', 'w') as configFile:
+        with open('Settings/Config.json', 'w') as configFile:
             newSettings = settingsEditor.get('1.0', END)
             configFile.write(newSettings)
             messagebox.showinfo("WAIT", "Please reload to apply changes")
@@ -168,7 +178,7 @@ def settings():
         return 'break'
     settingsEditor.bind("<Tab>", tab)
 
-    settingsEditor.insert(INSERT, open('Config.json').read())
+    settingsEditor.insert(INSERT, open('Settings/Config.json').read())
     saveSettingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
 
@@ -267,6 +277,10 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
 
 
 

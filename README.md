@@ -39,6 +39,8 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 # Settings:
 Setting | Function
 ------------ | -------------
-bg-color | the background color of the editor
-  
-  
+bg-color | Background color of the editor
+font-color | Color of text in the editor
+button-color | Color of buttons in the editor
+font | Font of the editor
+

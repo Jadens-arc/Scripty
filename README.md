@@ -8,8 +8,14 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   ![](images/IMAGE2.png)
   
   ![](images/IMAGE3.png)
-
-
+  
+# Keyboard Shortcut:
+  - Compile and Execute Code:
+      Alt - r
+  - Save Code
+      Alt - s
+  
+  
 # Requirements:
 
   - Python3(and its built-in moduals)

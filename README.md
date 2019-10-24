@@ -11,8 +11,12 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
 # Keyboard Shortcut:
   - Compile and Execute Code:
+  
       Alt - r
-  - Save Code
+  
+  
+  - Save Code:
+  
       Alt - s
   
   

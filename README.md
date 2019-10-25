@@ -39,12 +39,12 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 # Settings:
 Setting | Function
 ------------ | -------------
-bg-color | Background color of the editor
-font-color | Color of text in the editor
-button-color | Color of buttons in the editor
+bg-color | Background color of the editor (in hexadecimal or by name)
+font-color | Color of text in the editor (in hexadecimal or by name)
+button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 font-size | Font size of the editor
-curser-color | The color of your curser
+curser-color | The color of your curser (in hexadecimal or by name)
 line-wrap | Determines whether text will wrap to new line when it reaches the edge of the screen
 line-wrap-type | Determines whether the entire word will wrap or just the overflowing character (WORD or CHAR)
 auto-save | Toggle for automatic saving

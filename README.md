@@ -43,4 +43,8 @@ bg-color | Background color of the editor
 font-color | Color of text in the editor
 button-color | Color of buttons in the editor
 font | Font of the editor
+font-size | Font size of the editor
+curser-color | The color of your curser
+line-wrap | Determins wether text will wrap to new line when it reaches the edge of the screen
+line-wrap-type | Determins wether the entire word will wrap or just the overflowing character
 

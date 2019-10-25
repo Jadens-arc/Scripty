@@ -45,6 +45,19 @@ button-color | Color of buttons in the editor
 font | Font of the editor
 font-size | Font size of the editor
 curser-color | The color of your curser
-line-wrap | Determins wether text will wrap to new line when it reaches the edge of the screen
-line-wrap-type | Determins wether the entire word will wrap or just the overflowing character
+line-wrap | Determines whether text will wrap to new line when it reaches the edge of the screen
+line-wrap-type | Determines whether the entire word will wrap or just the overflowing character (WORD or CHAR)
+auto-save | Toggle for automatic saving
+auto-save-interval | Determines the frequency(in seconds) a save will occur
+python-indent-spacing | Determines the indent spacing for Python code
+java-indent-spacing | Determines the indent spacing for Java code
+cpp-indent-spacing | Determines the indent spacing for C++ code
+default-indent-spacing | Demermines the indent spacing for any programming language not listed above
+auto-indent | Toggle for auto indent
+settings-icon | Icon used for the settings button
+run-shortcut | Keyboard shorcut for compliling and exicuting code
+save-shortcut | Keyboard shortcut for saving code
+auto-complete | Toggle for smart completion of code
+run-lock | Toggle for run lock which disables editing of code while code is running
+
 

@@ -3,7 +3,7 @@
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   
-# Keyboard Shortcut:
+# Keyboard Shortcuts:
   - Compile and Execute Code:
   
         Alt - r

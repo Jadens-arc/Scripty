@@ -1,43 +1,64 @@
 # An open-source IDE for python, java, and C++
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
+try:
+    from tkinter import *
+    from tkinter import messagebox
+except:
+    os.system('sudo apt-get install python3-tk')
+    from tkinter import *
+    from tkinter import messagebox
+# Checks if tkinter is installed
+# if not then installs it
+# used for UI
 
-from tkinter import *
-from tkinter import messagebox
-import os
-import json
 import sys
+import os
+# For running commands in the terminal ^
+
+import json
+# For parsing json files ^
+
 import time
+
 import threading
+# For running multiple tasks on the CPU ^
+
 
 appAlive = True
+# This keeps track of whether the app is still open 
+# Used for killing threads
+
 
 defaultConfigFile = open('Settings/DefaultConfig.json')
 defaultConfigFile = defaultConfigFile.read()
 defaultConfigFile = json.loads(defaultConfigFile)
+# This opens and parses the defaut config file 
+
 
 configFile = open('Settings/Config.json')
 configFile = configFile.read()
 try:
     configFile = json.loads(configFile)
 except:
-    configFile = open('Settings/DefaultConfig.json')
-    configFile = configFile.read()
-    configFile = json.loads(configFile)
+    configFile = defaultConfigFile
+# This attemts to open the user config file; if json error is 
+# thrown opens default file
 
-# This opens the Config.json file to get the users settings
+
 
 os.system('clear')
-# This clears the terminal at the start of the program
+# ^ clears the terminal at the start of the program
 
 window = Tk()
 window.geometry("550x350")
+# ^ declared window and sets size (in pixels)
 
 fileLine = str(sys.argv[-1])
-# This find the arument (for which file to edit) in the terminal
-
 window.title(str(fileLine))
-# This takes the file the user selected and sets it as the title
+# ^  find the arument for which file to edit in the terminal
+# and sets it as the title of the window
+
 
 try:
     currFile = open(str(fileLine))
@@ -46,6 +67,7 @@ except:
     newFile.close()
     currFile = open(str(fileLine))
 # This tests to see if the file the user inputed exists other wise it will create a new one
+
 
 if configFile['line-wrap'] == True:
     if configFile['line-wrap-type'] == 'CHAR':
@@ -71,9 +93,6 @@ else:
 
     editor.place(rely = 0.07, relx = 0, relheight = 0.88, relwidth = 1.0)
 
-
-
-# This declares the editor text box
 
 def save():
     global appAlive
@@ -132,6 +151,8 @@ def executeCode():
     elif '.cpp' in fileLine:
         os.system('g++ ' + str(fileLine) + ' -o ' + fileLine[:-4])
         os.system('./' + fileLine[:-4])
+    elif '.cs' in fileLine:
+        os.system('dotnet run ' + fileLine)
 
 def enableEditor():
     editor.configure(state=NORMAL)
@@ -277,6 +298,12 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
+
+
+
+
+
+
 
 
 

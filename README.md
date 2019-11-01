@@ -7,8 +7,8 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   - Compile and Execute Code:
   
         Alt - r
-  
-  
+
+
   - Save Code:
   
         Alt - s
@@ -80,3 +80,6 @@ run-lock | Toggle for run lock which disables editing of code while code is runn
 
 
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTQ3MTg1MzI5NF19
+-->

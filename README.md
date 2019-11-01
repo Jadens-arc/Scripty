@@ -20,7 +20,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   - Tkinter
   
-  - Linux(not tested for Windows)
+  - Linux(not tested for Windows or Mac)
   
   - Java
   

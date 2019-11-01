@@ -50,7 +50,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
       
       alias scripty="python3 scripty.py"
       
-  Now you can just say scripty *[your file]* instead of the full command
+  Now you can just say *scripty [your file]* instead of the full command
   
       scripty [your file]
   

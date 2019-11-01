@@ -35,6 +35,24 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   ![](images/IMAGE3.png)
   
+# Tips:
+### Easy Running:
+
+  Change directories into your root directory
+
+      cd ~
+  
+  Start editing your .bashrc file
+  
+      nano .bashrc
+      
+  Scroll to the bottom and add an alias for python3 scripty.py
+      
+      alias scripty="python3 scripty.py"
+      
+  Now you can just say *scripty [your file]* instead of the full command
+  
+      scripty [your file]
   
 # Settings:
 Setting | Function
@@ -59,5 +77,6 @@ run-shortcut | Keyboard shorcut for compliling and exicuting code
 save-shortcut | Keyboard shortcut for saving code
 auto-complete | Toggle for smart completion of code
 run-lock | Toggle for run lock which disables editing of code while code is running
+
 
 

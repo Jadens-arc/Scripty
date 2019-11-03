@@ -1,6 +1,11 @@
 # An open-source IDE for python, java, and C++.
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
+
+import sys
+import os
+# For running commands in the terminal ^
+
 try:
     from tkinter import *
     from tkinter import messagebox
@@ -11,10 +16,6 @@ except:
 # Checks if tkinter is installed
 # if not then installs it
 # used for UI
-
-import sys
-import os
-# For running commands in the terminal ^
 
 import json
 # For parsing json files ^
@@ -298,78 +299,3 @@ autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
 
 window.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

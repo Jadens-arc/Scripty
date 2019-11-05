@@ -93,7 +93,8 @@ else:
         editor.insert(INSERT, line)
 
     editor.place(rely = 0.07, relx = 0, relheight = 0.88, relwidth = 1.0)
-
+# checks if line wrap is enabled and which kind on line wrap it is 
+# if line wrap is not enable it enables the scroll butttons 
 
 def save():
     global appAlive
@@ -104,10 +105,12 @@ def save():
         file.close()
     except:
         appAlive = False
-
+# Save function
+# it takes all the text in the editor and writes it to the appropriate file
+        
 def saveShortCut(arg):
     save()
-    # This function save the current file along with its changes
+# This function maps the save function to work with a keyboard shortcut
 
 def saveAs():
     saveAsWin = Tk()
@@ -126,24 +129,35 @@ def saveAs():
 
     saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
     saveAsBtn.place(relx = 0, rely = 0, relwidth=1.0, relheight = 0.2)
+    # declares button
 
     saveAsEditor = Text(saveAsWin)
     saveAsEditor.place(relx = 0, rely = 0.2, relwidth=1.0, relheight = 0.8)
+    # delares text editor
 
     def tab(arg):
         saveAsEditor.insert(INSERT, " " * configFile["python-indent-spacing"])
         return 'break'
+     saveAsEditor.bind("<Tab>", tab)
+     # binds tab key to appropriate spacing 
         
 
-    saveAsEditor.bind("<Tab>", tab)
     saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
     saveAsEditor.configure(insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
+    # configures window to match styling
     saveAsWin.mainloop()
+# Function for save as button
 
 def executeCode():
     save()
-    os.system('clear')
+    # saves file before running
+    
+    if configFile['clear-on-run'] == True:
+        os.system('clear')
+    # checks if clear on run is enabled in settings 
+    # if so clears terminal before running code
+    
     if '.py' in fileLine:
         os.system('python3 ' + str(fileLine))
     elif '.java' in fileLine:
@@ -154,9 +168,12 @@ def executeCode():
         os.system('./' + fileLine[:-4])
     elif '.cs' in fileLine:
         os.system('dotnet run ' + fileLine)
+    # finds which programming language the program is written in
+    # runs code using that language
 
 def enableEditor():
     editor.configure(state=NORMAL)
+# sets editor to is enabled state
 
 def run():
     if configFile['run-lock'] == False:
@@ -164,46 +181,58 @@ def run():
         runThread.start()
     else:
         editor.configure(state=DISABLED)
+        # disables editor while running if run lock is True
         runThread = threading.Thread(target = executeCode, name = "runThread1")
         runThread.start()
         runThread.join()
         enableThread = threading.Thread(target = enableEditor, name = "enableThread1")
         enableThread.start()
         enableThread.join()
+        # once it is done running renables editor 
+ # function for running code
 
 def runShortCut(arg):
     runThread = threading.Thread(target = executeCode, name = "runThread1")
     runThread.start()
-
+# keyboard short cut for running code
+# accepts argument from keyboard
+    
 def clear():
     os.system('clear')
+# function for clearing terminal
 
 def settings():
     settingsWin = Tk()
     settingsWin.geometry("350x500")
     settingsWin.title("Settings")
+    # delcares settings window
 
     def saveSettings():
         with open('Settings/Config.json', 'w') as configFile:
             newSettings = settingsEditor.get('1.0', END)
             configFile.write(newSettings)
             messagebox.showinfo("WAIT", "Please reload to apply changes")
+    # function for saving settings
 
     saveSettingsBtn = Button(settingsWin, text = 'Save', command = lambda: saveSettings())
     saveSettingsBtn.place(relx = 0, rely = 0, relwidth = 1.0, relheight = 0.1)
+    # declares saveSettingsButton
 
     settingsEditor = Text(settingsWin)
     settingsEditor.place(relx = 0, rely = 0.1, relwidth = 1.0, relheight = 0.9)
+    # delcares settings editor
  
     def tab(arg):
         settingsEditor.insert(INSERT, " " * configFile["default-indent-spacing"])
         return 'break'
     settingsEditor.bind("<Tab>", tab)
+    # binds tab to appropriate spacing
 
     settingsEditor.insert(INSERT, open('Settings/Config.json').read())
     saveSettingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
     settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
-
+    # configures settings editor and buttons to match styling
+    
     settingsWin.mainloop()
 
 def autoSave():
@@ -211,21 +240,27 @@ def autoSave():
         while appAlive == True:
             save()
             time.sleep(configFile["auto-save-interval"])
+# function for auto save
 
 runBtn = Button(window, text = "Run", command = lambda: run())
 runBtn.place(relx = 0, rely = 0, relwidth = 0.225, relheight = 0.07)
+# delcares run button 
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
 saveBtn.place(relx = 0.225, rely = 0, relwidth = 0.225, relheight = 0.07)
+# delcares save button 
 
 saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
 saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
+# delcares save as button 
 
 clearBtn = Button(window, text = "Clear", command = lambda: clear())
 clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
+# delcares clear button 
 
 settingsBtn = Button(window, text = configFile["settings-icon"], command = lambda: settings())
 settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
+# delcares settings button 
 
 def tab(arg):
     if '.py' in str(fileLine):
@@ -237,6 +272,7 @@ def tab(arg):
     else:
         editor.insert(INSERT, " " * configFile["default-indent-spacing"])
     return 'break'
+# maps tab to appropriate spacing
 
 def paraComplete(arg):
     editor.insert(INSERT, "()")

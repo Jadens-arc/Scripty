@@ -203,7 +203,7 @@ def clear():
 
 def settings():
     settingsWin = Tk()
-    settingsWin.geometry("350x500")
+    settingsWin.geometry("350x600")
     settingsWin.title("Settings")
     # delcares settings window
 

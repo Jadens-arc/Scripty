@@ -277,30 +277,38 @@ def tab(arg):
 def paraComplete(arg):
     editor.insert(INSERT, "()")
     return 'break'
+# inserts ()
 
 def curlComplete(arg):
     editor.insert(INSERT, "{}")
     return 'break'
+# inserts {}
 
 def bracketComplete(arg):
     editor.insert(INSERT, "[]")
     return 'break'
+# inserts []
 
 def arrowComplete(arg):
     editor.insert(INSERT, "<>")
     return 'break'
+# inserts <>
 
 def dubQuoteComplete(arg):
     editor.insert(INSERT, '""')
     return 'break'
+# inserts ""
 
 def singQuoteComplete(arg):
     editor.insert(INSERT, "''")
     return 'break'
+# inserts ''
 
 def autoIndent(arg):
     if str(' ' * configFile["python-indent-spacing"]) in editor.get(INSERT):
         editor.insert(INSERT, "    ")
+# will automaticly indent to the appropreat spacing 
+# work in progess
 
 editor.bind("<Tab>", tab)
 editor.bind(configFile["run-shortcut"], runShortCut)
@@ -316,6 +324,8 @@ if configFile["auto-complete"] == True:
     editor.bind("<Shift-0x002c>", arrowComplete)
     editor.bind("<Shift-0x0ad0>", dubQuoteComplete)
     editor.bind("<0x0ad0>", singQuoteComplete)
+# checks if auto complete is inabled 
+# if so binds keys
 
 editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
 editor.configure(insertbackground=configFile["curser-color"])
@@ -330,8 +340,10 @@ saveAsBtn.configure(background=configFile["button-color"], foreground = configFi
 runBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
 
 saveBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+# configures buttons and text editor to match style 
 
 autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
 autoSaveThread.start()
+# starts autosave thread
 
 window.mainloop()

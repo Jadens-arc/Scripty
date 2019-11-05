@@ -138,8 +138,8 @@ def saveAs():
     def tab(arg):
         saveAsEditor.insert(INSERT, " " * configFile["python-indent-spacing"])
         return 'break'
-     saveAsEditor.bind("<Tab>", tab)
-     # binds tab key to appropriate spacing 
+    saveAsEditor.bind("<Tab>", tab)
+    # binds tab key to appropriate spacing 
         
 
     saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)

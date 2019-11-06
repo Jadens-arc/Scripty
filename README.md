@@ -1,3 +1,4 @@
+
 # Scripty:
 
 An Open-Source IDE for ChromeOS by Jaden Arceneaux
@@ -7,8 +8,8 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   - Compile and Execute Code:
   
         Alt - r
-
-
+  
+  
   - Save Code:
   
         Alt - s
@@ -20,7 +21,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
   - Tkinter
   
-  - Linux(not tested for Windows or Mac)
+  - Linux(not tested for Windows or MacOS)
   
   - Java
   
@@ -40,19 +41,19 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Change directories into your root directory
 
-      cd ~
-  
+      $ cd ~
+
   Start editing your .bashrc file
-  
-      nano .bashrc
-      
+
+      $ nano .bashrc
+
   Scroll to the bottom and add an alias for python3 scripty.py
-      
+
       alias scripty="python3 scripty.py"
-      
+
   Now you can just say *scripty [your file]* instead of the full command
-  
-      scripty [your file]
+
+      $ scripty [your file]
   
 # Settings:
 Setting | Function
@@ -71,15 +72,16 @@ python-indent-spacing | Determines the indent spacing for Python code
 java-indent-spacing | Determines the indent spacing for Java code
 cpp-indent-spacing | Determines the indent spacing for C++ code
 default-indent-spacing | Demermines the indent spacing for any programming language not listed above
-auto-indent | Toggle for auto indent
+auto-indent | **WORK IN PROGRESS** Toggle for auto indent
 settings-icon | Icon used for the settings button
 run-shortcut | Keyboard shorcut for compliling and exicuting code
 save-shortcut | Keyboard shortcut for saving code
 auto-complete | Toggle for smart completion of code
 run-lock | Toggle for run lock which disables editing of code while code is running
-
-
+clear-on-run | Toggle for clearing terminal when program is ran
+compilers | **WORK IN PROGRESS**  Specifies the commands used to run code for certain languages
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ3MTg1MzI5NF19
+eyJoaXN0b3J5IjpbMTk4MTkzNTk4Niw0NTkwMzY4ODcsMTQ3MT
+g1MzI5NF19
 -->

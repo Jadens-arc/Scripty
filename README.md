@@ -53,7 +53,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Now you can just say *scripty [your file]* instead of the full command
 
-      **$** scripty [your file]
+      $ scripty [your file]
   
 # Settings:
 Setting | Function
@@ -82,5 +82,6 @@ clear-on-run | Toggle for clearing terminal when program is ran
 compilers | **WORK IN PROGRESS**  Specifies the commands used to run code for certain languages
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDU5MDM2ODg3LDE0NzE4NTMyOTRdfQ==
+eyJoaXN0b3J5IjpbMTk4MTkzNTk4Niw0NTkwMzY4ODcsMTQ3MT
+g1MzI5NF19
 -->

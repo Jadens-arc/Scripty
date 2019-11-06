@@ -41,11 +41,11 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Change directories into your root directory
 
-      cd ~
+      $ cd ~
 
   Start editing your .bashrc file
 
-      nano .bashrc
+      $ nano .bashrc
 
   Scroll to the bottom and add an alias for python3 scripty.py
 
@@ -53,7 +53,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Now you can just say *scripty [your file]* instead of the full command
 
-      scripty [your file]
+      **$** scripty [your file]
   
 # Settings:
 Setting | Function

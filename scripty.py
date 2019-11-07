@@ -1,4 +1,4 @@
-# An open-source IDE for python, java, and C++.
+# An open-source IDE for python, java, and C++
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
 

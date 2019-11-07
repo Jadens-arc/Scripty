@@ -4,7 +4,7 @@
 
 import sys
 import os
-# For running commands in the terminal ^
+# For running commands in the terminal
 
 try:
     from tkinter import *
@@ -18,12 +18,12 @@ except:
 # used for UI
 
 import json
-# For parsing json files ^
+# For parsing json files 
 
 import time
 
 import threading
-# For running multiple tasks on the CPU ^
+# For running multiple tasks on the CPU 
 
 
 appAlive = True

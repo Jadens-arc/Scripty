@@ -37,6 +37,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   ![](images/IMAGE3.png)
   
 # Tips:
+
 ### Easy Running:
 
   Change directories into your root directory

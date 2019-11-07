@@ -38,6 +38,10 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
 # Tips:
 
+### Installing Dependacies:
+  
+  Scripty will automaticly install Tkinter but will not install Java or C++
+
 ### Easy Running:
 
   Change directories into your root directory

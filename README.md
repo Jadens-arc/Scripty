@@ -30,9 +30,9 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 # Usage:
   
-    cd scripty
+    cd Scripty
   
-    python3 scripty.py [your file]
+    python3 Scripty.py [your file]
   
   ![](images/IMAGE3.png)
   
@@ -54,11 +54,11 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Scroll to the bottom and add an alias for python3 scripty.py
 
-      alias scripty="python3 scripty.py"
+      alias scripty="python3 Scripty.py"
 
-  Now you can just say *scripty [your file]* instead of the full command
+  Now you can just say *Scripty [your file]* instead of the full command
 
-      $ scripty [your file]
+      $ Scripty [your file]
   
 # Settings:
 Setting | Function

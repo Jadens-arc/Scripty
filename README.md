@@ -84,7 +84,6 @@ save-shortcut | Keyboard shortcut for saving code
 auto-complete | Toggle for smart completion of code
 run-lock | Toggle for run lock which disables editing of code while code is running
 clear-on-run | Toggle for clearing terminal when program is ran
-compilers | **WORK IN PROGRESS**  Specifies the commands used to run code for certain languages
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTk4MTkzNTk4Niw0NTkwMzY4ODcsMTQ3MT

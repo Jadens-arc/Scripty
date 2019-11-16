@@ -26,6 +26,6 @@
     "auto-complete": false,
 
     "run-lock": false,
-    "clear-on-run": true,
+    "clear-on-run": true
     
 }

@@ -28,9 +28,4 @@
     "run-lock": false,
     "clear-on-run": true,
     
-    "compilers":{
-        ".java" : "javac {} && java {}",
-        ".py": "python3 {}",
-        ".cpp": "gpp {}"
-    }
 }

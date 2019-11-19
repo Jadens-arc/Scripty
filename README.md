@@ -17,11 +17,11 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
   
 # Requirements:
 
-  - Python3(and its built-in moduals)
+  - Python3 (and its built-in moduals)
   
-  - Tkinter
+  - Tkinter (will automaticly install on run)
   
-  - Linux(not tested for Windows or MacOS)
+  - Linux (not tested for Windows or MacOS)
   
   - Java
   
@@ -86,6 +86,6 @@ run-lock | Toggle for run lock which disables editing of code while code is runn
 clear-on-run | Toggle for clearing terminal when program is ran
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk4MTkzNTk4Niw0NTkwMzY4ODcsMTQ3MT
-g1MzI5NF19
+eyJoaXN0b3J5IjpbMTI2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OT
+AzNjg4NywxNDcxODUzMjk0XX0=
 -->

@@ -91,9 +91,21 @@ clear-on-run | Toggle for clearing terminal when program is ran
  - Blue
 
 ## Creating a Theme:
-> Themes must be in json format and must be saved in the Themes folder
+**Themes must be in json format and must be saved in the Themes folder**
 
-		ex. Scripty/Settings/$nano myTheme.json
+	ex. Scripty/Settings/Themes$ nano myTheme.json
+		
+Themes must follow this template
+
+	{
+	"bg-color": "DarkSlateGray1",
+	"font-color": "black",
+	"button-color": "DarkSlateGray3",
+	"font": "Courier",
+
+"curser-color": "cyan3"
+
+}
 
 Setting | Function
 ------------ | -------------
@@ -104,6 +116,7 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwODI0NzE0MTIsMTI2OTM5MDQ5MSwxOT
-gxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX0=
+eyJoaXN0b3J5IjpbLTQwOTYyMTcwOSwtMjA4MjQ3MTQxMiwxMj
+Y5MzkwNDkxLDE5ODE5MzU5ODYsNDU5MDM2ODg3LDE0NzE4NTMy
+OTRdfQ==
 -->

@@ -84,8 +84,14 @@ clear-on-run | Toggle for clearing terminal when program is ran
 # Themes:
 ## Available Themes:
 
+ - Watermelon
+ - Light-Mode
+ - Dark-Mode
+ - Red
+ - Blue
 
 ## Creating a Theme:
+>
 Setting | Function
 ------------ | -------------
 curser-color | The color of your curser (in hexadecimal or by name)
@@ -95,6 +101,6 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OT
-AzNjg4NywxNDcxODUzMjk0XX0=
+eyJoaXN0b3J5IjpbLTExMDMyNjg4OTcsMTI2OTM5MDQ5MSwxOT
+gxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX0=
 -->

@@ -94,7 +94,7 @@ clear-on-run | Toggle for clearing terminal when program is ran
 ## Creating a Theme:
 **Themes must be in json format and must be saved in the Themes folder**
 
-	ex. Scripty/Settings/Themes$ nano myTheme.json
+	ex. Scripty/Settings/Themes$ nano mytheme.json
 		
 **Themes must follow this template**
 

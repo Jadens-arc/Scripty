@@ -1,5 +1,5 @@
 {
-    "theme": "Dark-Mode",
+    "theme": "dark-mode",
 
     "font-size": 12,
     "line-wrap": true,
@@ -26,6 +26,10 @@
     "clear-on-run": true
     
 }
+
+
+
+
 
 
 

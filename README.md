@@ -34,8 +34,8 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
     cd Scripty
     
     python3 Scripty.py [your file]
-  
-  ![](images/IMAGE3.png)
+ 
+![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
   
 # Tips:
 
@@ -118,7 +118,8 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NjMzODc2NywtMjEyMDgwNzU0OCwtOD
-k5NjIxNjY2LC0yMDgyNDcxNDEyLDEyNjkzOTA0OTEsMTk4MTkz
-NTk4Niw0NTkwMzY4ODcsMTQ3MTg1MzI5NF19
+eyJoaXN0b3J5IjpbLTI0NTIzMzA1NiwtMzY2MzM4NzY3LC0yMT
+IwODA3NTQ4LC04OTk2MjE2NjYsLTIwODI0NzE0MTIsMTI2OTM5
+MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX
+0=
 -->

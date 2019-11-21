@@ -99,11 +99,11 @@ clear-on-run | Toggle for clearing terminal when program is ran
 **Themes must follow this template**
 
 	{
-	"bg-color": [Color],
-	"font-color": [Color],
-	"button-color": [Color],
-	"font": [Font],
-	"curser-color": [Color]
+		"bg-color": [Color],
+		"font-color": [Color],
+		"button-color": [Color],
+		"font": [Font],
+		"curser-color": [Color]
 	}
 
 Setting | Function
@@ -115,7 +115,7 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYzMTQyMjU4OCwtODk5NjIxNjY2LC0yMD
-gyNDcxNDEyLDEyNjkzOTA0OTEsMTk4MTkzNTk4Niw0NTkwMzY4
-ODcsMTQ3MTg1MzI5NF19
+eyJoaXN0b3J5IjpbLTIxMjA4MDc1NDgsLTg5OTYyMTY2NiwtMj
+A4MjQ3MTQxMiwxMjY5MzkwNDkxLDE5ODE5MzU5ODYsNDU5MDM2
+ODg3LDE0NzE4NTMyOTRdfQ==
 -->

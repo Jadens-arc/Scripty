@@ -93,7 +93,7 @@ clear-on-run | Toggle for clearing terminal when program is ran
 
 ## Creating a Theme:
 **Themes must be in json format and must be saved in the Themes folder**
-The names of these files must be completly lower case
+The names of these files must be completely lower case
 
 	ex. Scripty/Settings/Themes$ nano mytheme.json
 		
@@ -116,7 +116,7 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk5ODMzNjE2MCwtMjEyMDgwNzU0OCwtOD
-k5NjIxNjY2LC0yMDgyNDcxNDEyLDEyNjkzOTA0OTEsMTk4MTkz
-NTk4Niw0NTkwMzY4ODcsMTQ3MTg1MzI5NF19
+eyJoaXN0b3J5IjpbLTE0MDk1ODQ2MTcsLTIxMjA4MDc1NDgsLT
+g5OTYyMTY2NiwtMjA4MjQ3MTQxMiwxMjY5MzkwNDkxLDE5ODE5
+MzU5ODYsNDU5MDM2ODg3LDE0NzE4NTMyOTRdfQ==
 -->

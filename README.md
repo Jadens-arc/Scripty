@@ -95,7 +95,7 @@ clear-on-run | Toggle for clearing terminal when program is ran
 
 	ex. Scripty/Settings/Themes$ nano myTheme.json
 		
-Themes must follow this template
+**Themes must follow this template**
 
 	{
 	"bg-color": [Color],
@@ -114,7 +114,7 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjMzNzI1NzgsLTIwODI0NzE0MTIsMT
-I2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUz
-Mjk0XX0=
+eyJoaXN0b3J5IjpbLTg5OTYyMTY2NiwtMjA4MjQ3MTQxMiwxMj
+Y5MzkwNDkxLDE5ODE5MzU5ODYsNDU5MDM2ODg3LDE0NzE4NTMy
+OTRdfQ==
 -->

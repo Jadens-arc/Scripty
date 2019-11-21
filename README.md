@@ -63,12 +63,8 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 # Settings:
 Setting | Function
 ------------ | -------------
-bg-color | Background color of the editor (in hexadecimal or by name)
-font-color | Color of text in the editor (in hexadecimal or by name)
-button-color | Color of buttons in the editor (in hexadecimal or by name)
-font | Font of the editor
+Theme | Changes the theme(color scheme) of the editor
 font-size | Font size of the editor
-curser-color | The color of your curser (in hexadecimal or by name)
 line-wrap | Determines whether text will wrap to new line when it reaches the edge of the screen
 line-wrap-type | Determines whether the entire word will wrap or just the overflowing character (WORD or CHAR)
 auto-save | Toggle for automatic saving
@@ -84,6 +80,19 @@ save-shortcut | Keyboard shortcut for saving code
 auto-complete | Toggle for smart completion of code
 run-lock | Toggle for run lock which disables editing of code while code is running
 clear-on-run | Toggle for clearing terminal when program is ran
+
+# Themes:
+## Available Themes:
+
+
+## Creating a Theme:
+Setting | Function
+------------ | -------------
+curser-color | The color of your curser (in hexadecimal or by name)
+bg-color | Background color of the editor (in hexadecimal or by name)
+font-color | Color of text in the editor (in hexadecimal or by name)
+button-color | Color of buttons in the editor (in hexadecimal or by name)
+font | Font of the editor
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTI2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OT

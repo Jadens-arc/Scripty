@@ -46,7 +46,7 @@ except:
 # This attemts to open the user config file; if json error is 
 # thrown opens default file
 
-styleSheet = open("Settings/Themes/" + configFile["theme"] + '.json')
+styleSheet = open("Settings/Themes/" + configFile["theme"].lower() + '.json')
 styleSheet = json.loads(styleSheet.read())
 
 os.system('clear')

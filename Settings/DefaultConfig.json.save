@@ -1,0 +1,13 @@
+{
+    "theme": "Dark-Mode",
+
+    "font-size": 12,
+    "line-wrap": true,
+    "line-wrap-type": "WORD",
+
+    "auto-save": true,
+    "auto-save-interval": 1,
+    
+    "python-indent-spacing": 4,
+    "java-indent-spacing": 2,
+    "cpp-ind

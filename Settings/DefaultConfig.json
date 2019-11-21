@@ -1,12 +1,9 @@
 {
-    "bg-color": "grey20",
-    "font-color": "white",
-    "button-color": "grey25",
-    "font": "Courier",
+    "theme": "Dark-Mode",
+
     "font-size": 12,
-    "curser-color": "cyan",
     "line-wrap": true,
-    "line-wrap-type": "WORD",    
+    "line-wrap-type": "WORD",
 
     "auto-save": true,
     "auto-save-interval": 1,

@@ -46,7 +46,8 @@ except:
 # This attemts to open the user config file; if json error is 
 # thrown opens default file
 
-
+styleSheet = open("Settings/Themes/" + configFile["theme"] + '.json')
+styleSheet = json.loads(styleSheet.read())
 
 os.system('clear')
 # ^ clears the terminal at the start of the program
@@ -81,7 +82,7 @@ if configFile['line-wrap'] == True:
         editor.insert(INSERT, line)
     editor.place(rely = 0.07, relx = 0, relheight = 0.93, relwidth = 1.0)
 else:
-    scrollbar = Scrollbar(window, orient=HORIZONTAL, background = configFile['bg-color'])
+    scrollbar = Scrollbar(window, orient=HORIZONTAL, background = styleSheet['bg-color'])
     scrollbar.place(relx = 0, rely = 0.95, relheight = 0.05)
 
     editor = Text(window, wrap = NONE)
@@ -142,9 +143,9 @@ def saveAs():
     # binds tab key to appropriate spacing 
         
 
-    saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
-    saveAsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-    saveAsEditor.configure(insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
+    saveAsBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
+    saveAsEditor.configure(background=styleSheet["bg-color"], foreground = styleSheet["font-color"])
+    saveAsEditor.configure(insertbackground=styleSheet["curser-color"], highlightthickness = 0, bd = 0)
     # configures window to match styling
     saveAsWin.mainloop()
 # Function for save as button
@@ -229,8 +230,8 @@ def settings():
     # binds tab to appropriate spacing
 
     settingsEditor.insert(INSERT, open('Settings/Config.json').read())
-    saveSettingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
-    settingsEditor.configure(background=configFile["bg-color"], foreground = configFile["font-color"], insertbackground=configFile["curser-color"], highlightthickness = 0, bd = 0)
+    saveSettingsBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
+    settingsEditor.configure(background=styleSheet["bg-color"], foreground = styleSheet["font-color"], insertbackground=styleSheet["curser-color"], highlightthickness = 0, bd = 0)
     # configures settings editor and buttons to match styling
     
     settingsWin.mainloop()
@@ -327,19 +328,19 @@ if configFile["auto-complete"] == True:
 # checks if auto complete is inabled 
 # if so binds keys
 
-editor.configure(background=configFile["bg-color"], foreground = configFile["font-color"])
-editor.configure(insertbackground=configFile["curser-color"])
-editor.configure(font = (configFile["font"], configFile["font-size"]), highlightthickness = 0, bd = 0)
+editor.configure(background=styleSheet["bg-color"], foreground = styleSheet["font-color"])
+editor.configure(insertbackground=styleSheet["curser-color"])
+editor.configure(font = (styleSheet["font"], configFile["font-size"]), highlightthickness = 0, bd = 0)
 
-settingsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+settingsBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 
-clearBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+clearBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 
-saveAsBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+saveAsBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 
-runBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+runBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 
-saveBtn.configure(background=configFile["button-color"], foreground = configFile["font-color"], highlightthickness = 0, bd = 0)
+saveBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 # configures buttons and text editor to match style 
 
 autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")
@@ -347,3 +348,30 @@ autoSaveThread.start()
 # starts autosave thread
 
 window.mainloop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

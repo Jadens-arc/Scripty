@@ -98,14 +98,12 @@ clear-on-run | Toggle for clearing terminal when program is ran
 Themes must follow this template
 
 	{
-	"bg-color": "DarkSlateGray1",
-	"font-color": "black",
-	"button-color": "DarkSlateGray3",
-	"font": "Courier",
-
-"curser-color": "cyan3"
-
-}
+	"bg-color": ,
+	"font-color": ,
+	"button-color": ,
+	"font": ,
+	"curser-color": * [Color]
+	}
 
 Setting | Function
 ------------ | -------------
@@ -116,7 +114,7 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwOTYyMTcwOSwtMjA4MjQ3MTQxMiwxMj
-Y5MzkwNDkxLDE5ODE5MzU5ODYsNDU5MDM2ODg3LDE0NzE4NTMy
-OTRdfQ==
+eyJoaXN0b3J5IjpbLTEwNjgzODc1MjAsLTIwODI0NzE0MTIsMT
+I2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUz
+Mjk0XX0=
 -->

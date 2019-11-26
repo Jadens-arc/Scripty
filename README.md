@@ -91,6 +91,10 @@ clear-on-run | Toggle for clearing terminal when a program is ran
  - Red
  - Blue
  - Green
+ - Off-White
+ - Purple
+ - Dark-blue
+ - McLaren
 
 ## Creating a Theme:
 **Themes must be in JSON format and must be saved in the Themes folder.**

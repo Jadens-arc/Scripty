@@ -30,11 +30,12 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 
 # Usage:
-  
+
     cd Scripty
     
     python3 Scripty.py [your file]
- 
+    
+
 ![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
   
 # Tips:
@@ -47,7 +48,7 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
   Change directories into your root directory
 
-      $ cd ~
+	  $ cd ~
 
   Start editing your .bashrc file
 
@@ -104,7 +105,7 @@ clear-on-run | Toggle for clearing terminal when a program is ran
     ex. Scripty/Settings/Themes$ nano mytheme.json
         
 **Themes must follow this template**
-
+```json
     {
         "bg-color": [Color],
         "font-color": [Color],
@@ -112,7 +113,7 @@ clear-on-run | Toggle for clearing terminal when a program is ran
         "font": [Font],
         "curser-color": [Color]
     }
-
+```
 Setting | Function
 ------------ | -------------
 curser-color | The color of your curser (in hexadecimal or by name)
@@ -122,8 +123,8 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTIzMzA1NiwtMzY2MzM4NzY3LC0yMT
-IwODA3NTQ4LC04OTk2MjE2NjYsLTIwODI0NzE0MTIsMTI2OTM5
-MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX
-0=
+eyJoaXN0b3J5IjpbMTc2ODExMjUwLC0xMDA3OTE4Mzk5LC0yND
+UyMzMwNTYsLTM2NjMzODc2NywtMjEyMDgwNzU0OCwtODk5NjIx
+NjY2LC0yMDgyNDcxNDEyLDEyNjkzOTA0OTEsMTk4MTkzNTk4Ni
+w0NTkwMzY4ODcsMTQ3MTg1MzI5NF19
 -->

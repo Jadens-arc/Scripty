@@ -30,12 +30,12 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 
 
 # Usage:
-  ``` console
+
     cd Scripty
     
     python3 Scripty.py [your file]
     
- ```
+
 ![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
   
 # Tips:
@@ -47,9 +47,9 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 ### Easy Running:
 
   Change directories into your root directory
-```console
-  $ cd ~
-```
+
+	  $ cd ~
+
   Start editing your .bashrc file
 
       $ nano .bashrc
@@ -123,8 +123,8 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDkxOTU0ODAsLTEwMDc5MTgzOTksLT
-I0NTIzMzA1NiwtMzY2MzM4NzY3LC0yMTIwODA3NTQ4LC04OTk2
-MjE2NjYsLTIwODI0NzE0MTIsMTI2OTM5MDQ5MSwxOTgxOTM1OT
-g2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX0=
+eyJoaXN0b3J5IjpbMTc2ODExMjUwLC0xMDA3OTE4Mzk5LC0yND
+UyMzMwNTYsLTM2NjMzODc2NywtMjEyMDgwNzU0OCwtODk5NjIx
+NjY2LC0yMDgyNDcxNDEyLDEyNjkzOTA0OTEsMTk4MTkzNTk4Ni
+w0NTkwMzY4ODcsMTQ3MTg1MzI5NF19
 -->

@@ -104,7 +104,7 @@ clear-on-run | Toggle for clearing terminal when a program is ran
     ex. Scripty/Settings/Themes$ nano mytheme.json
         
 **Themes must follow this template**
-
+```Json
     {
         "bg-color": [Color],
         "font-color": [Color],
@@ -112,7 +112,7 @@ clear-on-run | Toggle for clearing terminal when a program is ran
         "font": [Font],
         "curser-color": [Color]
     }
-
+```
 Setting | Function
 ------------ | -------------
 curser-color | The color of your curser (in hexadecimal or by name)
@@ -122,8 +122,8 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0NTIzMzA1NiwtMzY2MzM4NzY3LC0yMT
-IwODA3NTQ4LC04OTk2MjE2NjYsLTIwODI0NzE0MTIsMTI2OTM5
-MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4NywxNDcxODUzMjk0XX
-0=
+eyJoaXN0b3J5IjpbOTg1NjkzMjI0LC0yNDUyMzMwNTYsLTM2Nj
+MzODc2NywtMjEyMDgwNzU0OCwtODk5NjIxNjY2LC0yMDgyNDcx
+NDEyLDEyNjkzOTA0OTEsMTk4MTkzNTk4Niw0NTkwMzY4ODcsMT
+Q3MTg1MzI5NF19
 -->

@@ -46,9 +46,9 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux
 ### Easy Running:
 
   Change directories into your root directory
-
-      $ cd ~
-
+```console
+  $ cd ~
+```
   Start editing your .bashrc file
 
       $ nano .bashrc
@@ -122,8 +122,8 @@ button-color | Color of buttons in the editor (in hexadecimal or by name)
 font | Font of the editor
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM1NDg4NTEyOCwtMjQ1MjMzMDU2LC0zNj
-YzMzg3NjcsLTIxMjA4MDc1NDgsLTg5OTYyMTY2NiwtMjA4MjQ3
-MTQxMiwxMjY5MzkwNDkxLDE5ODE5MzU5ODYsNDU5MDM2ODg3LD
-E0NzE4NTMyOTRdfQ==
+eyJoaXN0b3J5IjpbLTEwMDc5MTgzOTksLTI0NTIzMzA1NiwtMz
+Y2MzM4NzY3LC0yMTIwODA3NTQ4LC04OTk2MjE2NjYsLTIwODI0
+NzE0MTIsMTI2OTM5MDQ5MSwxOTgxOTM1OTg2LDQ1OTAzNjg4Ny
+wxNDcxODUzMjk0XX0=
 -->

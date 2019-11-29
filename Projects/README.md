@@ -1,6 +1,6 @@
 # Welcome to the Projects folder
 ## This is where all of your coding projects will be stored
-> This readme file is a neceity as Git
+> This README is a necessity as GitHub will not allow an empty directory
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTc3NDk0NzNdfQ==
+eyJoaXN0b3J5IjpbLTE4Mjg3Nzk0MzVdfQ==
 -->

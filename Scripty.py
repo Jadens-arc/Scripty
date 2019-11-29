@@ -56,7 +56,7 @@ window = Tk()
 window.geometry("550x350")
 # ^ declared window and sets size (in pixels)
 
-fileLine = str(sys.argv[-1])
+fileLine = 'Projects/' + str(sys.argv[-1])
 window.title(str(fileLine))
 # ^  find the arument for which file to edit in the terminal
 # and sets it as the title of the window
@@ -348,6 +348,9 @@ autoSaveThread.start()
 # starts autosave thread
 
 window.mainloop()
+
+
+
 
 
 

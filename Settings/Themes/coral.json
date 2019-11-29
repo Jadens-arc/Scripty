@@ -1,7 +1,7 @@
 {
-    "bg-color": "white",
+    "bg-color": "IndianRed1",
     "font-color": "black",
-    "button-color": "grey80",
+    "button-color": "IndianRed3",
     "font": "Courier",
     "curser-color": "cyan3"
 }

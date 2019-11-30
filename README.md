@@ -73,7 +73,7 @@ auto-save | Toggle for automatic saving
 auto-save-interval | Determines the frequency(in seconds) a save will occur
 python-indent-spacing | Determines the indent spacing for Python code
 java-indent-spacing | Determines the indent spacing for Java code
-CPP-indent-spacing | Determines the indent spacing for C++ code
+cpp-indent-spacing | Determines the indent spacing for C++ code
 default-indent-spacing | Determines the indent spacing for any programming language not listed above
 auto-indent | **WORK IN PROGRESS** Toggle for auto-indent
 settings-icon | Icon used for the settings button
@@ -107,11 +107,11 @@ clear-on-run | Toggle for clearing terminal when a program is ran
 **Themes must follow this template**
 ```json
     {
-        "bg-color": [Color],
-        "font-color": [Color],
-        "button-color": [Color],
-        "font": [Font],
-        "curser-color": [Color]
+        "bg-color": "[Color]",
+        "font-color": "[Color]",
+        "button-color": "[Color]",
+        "font": "[Font]",
+        "curser-color": "[Color]"
     }
 ```
 Setting | Function

@@ -1,67 +1,62 @@
 
 
 # Scripty:
+An Open-Source IDE for ChromeOS by Jaden Arceneaux. This project was created due to a distinct lack of good IDEs for ChromeOS. The goal of Scripty is to supplement this problem. Scripty takes advantage of the build in Linux sandbox in Chrome Books to provide the best coding experience on ChromeOS.
 
-An Open-Source IDE for ChromeOS by Jaden Arceneaux
-  
-  
-# Keyboard Shortcuts:
-  - Compile and Execute Code:
-  
-        Alt - r
-  
-  
-  - Save Code:
-  
-        Alt - s
-  
-  
 # Requirements:
-
-  - Python3 (and its built-in modules)
-  
+  - Python3
   - Tkinter (will automatically install on run)
-  
+  - OS (built in Python module)
+  - JSON (built in Python module)
+  - Sys (built in Python module)
+  - Time (built in Python module)
+  - Threading  (built in Python module)
   - Linux (not tested for Windows or macOS)
-  
   - Java
-  
   - C++
 
-
 # Usage:
-
-    cd Scripty
-    
-    python3 Scripty.py [your file]
-    
+```
+cd Scripty
+python3 Scripty.py [your file]
+```
 
 ![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
-  
+Projects you create will be stored in the Projects folder
+
 # Tips:
 
+### Keyboard Shortcuts:
+- Compile and Execute Code:
+```
+Alt - r
+```
+- Save Code:
+```
+Alt - s
+```
+
 ### Installing Dependencies:
-  
-  Scripty will automatically install Tkinter but will not install Java or C++
+Scripty will automatically install Tkinter but will not install Java or C++
 
 ### Easy Running:
+Change directories into your root directory
+```
+$ cd ~
+```
+Start editing your .bashrc file
+```
+$ nano .bashrc
+```
+Scroll to the bottom and add an alias for python3 scripty.py
+```
+alias scripty="python3 Scripty.py"
+```
+Now you can just say *Scripty [your file]* instead of the full command
+```
+$ Scripty [your file]
+```
 
-  Change directories into your root directory
-
-	  $ cd ~
-
-  Start editing your .bashrc file
-
-      $ nano .bashrc
-
-  Scroll to the bottom and add an alias for python3 scripty.py
-
-      alias scripty="python3 Scripty.py"
-
-  Now you can just say *Scripty [your file]* instead of the full command
-
-      $ Scripty [your file]
-  
 # Settings:
 Setting | Function
 ------------ | -------------
@@ -103,18 +98,19 @@ clear-on-run | Toggle for clearing terminal when a program is ran
 **Themes must be in JSON format and must be saved in the Themes folder.**
 
 **The names of these files must be completely lower case.**
+```
+ex. Scripty/Settings/Themes$ nano mytheme.json
+```
 
-    ex. Scripty/Settings/Themes$ nano mytheme.json
-        
 **Themes must follow this template**
 ```json
-    {
-        "bg-color": "[Color]",
-        "font-color": "[Color]",
-        "button-color": "[Color]",
-        "font": "[Font]",
-        "curser-color": "[Color]"
-    }
+{
+    "bg-color": "[Color]",
+    "font-color": "[Color]",
+    "button-color": "[Color]",
+    "font": "[Font]",
+    "curser-color": "[Color]"
+}
 ```
 Setting | Function
 ------------ | -------------

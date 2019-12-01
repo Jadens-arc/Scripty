@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # An open-source IDE for python, java, and C++
 # By Jaden Arceneaux arceneauxJaden@gmail.com
 # Feel free to change code as you feel
@@ -25,6 +26,7 @@ import time
 import threading
 # For running multiple tasks on the CPU 
 
+os.system('chmod +x Scripty.py')
 
 appAlive = True
 # This keeps track of whether the app is still open 
@@ -163,7 +165,7 @@ def executeCode():
         os.system('python3 ' + str(fileLine))
     elif '.java' in fileLine:
         os.system('javac ' + str(fileLine))
-        os.system('java ' + fileLine[:-5])
+        os.system('cd Projects && java ' + (fileLine[:-5]).replace('Projects/', ''))
     elif '.cpp' in fileLine:
         os.system('g++ ' + str(fileLine) + ' -o ' + fileLine[:-4])
         os.system('./' + fileLine[:-4])

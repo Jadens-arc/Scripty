@@ -351,32 +351,3 @@ autoSaveThread.start()
 
 window.mainloop()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

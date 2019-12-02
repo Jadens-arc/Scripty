@@ -22,7 +22,10 @@ python3 Scripty.py [your file]
 ```
 
 ![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
-Projects you create will be stored in the Projects folder
+
+Projects you create will be stored in the /Projects/ directory
+
+These projects will be gitignored by default 
 
 # Tips:
 

@@ -1,7 +1,7 @@
 
 
 # Scripty:
-An Open-Source IDE for ChromeOS by Jaden Arceneaux. This project was created due to a distinct lack of good IDEs for ChromeOS. The goal of Scripty is to supplement this problem. Scripty takes advantage of the build in Linux sandbox in Chrome Books to provide the best coding experience on ChromeOS.
+An Open-Source IDE for ChromeOS by Jaden Arceneaux. This project was created due to a distinct lack of good IDEs for ChromeOS. The goal of Scripty is to supplement this problem. Scripty takes advantage of the built-in Linux sandbox in Chrome Books to provide the best coding experience on ChromeOS.
 
 # Requirements:
   - Python3
@@ -21,7 +21,7 @@ cd Scripty
 python3 Scripty.py [your file]
 ```
 
-![Image of scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
+![Image of Scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
 
 Projects you create will be stored in the /Projects/ directory
 

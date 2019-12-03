@@ -18,8 +18,9 @@ An Open-Source IDE for ChromeOS by Jaden Arceneaux. This project was created due
 # Usage:
 ```
 cd Scripty
-python3 Scripty.py [your file]
+python3 Scripty.py
 ```
+This will then bring up a window for you to select a file
 
 ![Image of Scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
 

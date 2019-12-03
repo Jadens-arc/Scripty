@@ -1,3 +1,7 @@
 Projects/*
 !Projects/README.md
 # Ignores everything in the Projects folder except the README
+
+*.swp
+*.pyc
+# Ignores python backup files

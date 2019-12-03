@@ -119,40 +119,16 @@ def saveShortCut(arg):
 # This function maps the save function to work with a keyboard shortcut
 
 def saveAs():
-    saveAsWin = Tk()
-    saveAsWin.geometry("550x125")
-    saveAsWin.resizable(0,0)
-    saveAsWin.title("Save As")
-    # This declares the save as window and its fixed size
-    def saveName():
-        saveAsLoca = saveAsEditor.get('1.0', END)
-        file = open(saveAsLoca[:-1], 'w')
-        file.write(editor.get('1.0', END))
-        fileLine = saveAsLoca[:-1]
-        window.title(saveAsEditor.get('1.0', END)[:-1])
+    global fileLine, appAlive
+    fileLine = filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py")))
+    try:
+        user = editor.get('1.0', END)
+        file = open(str(fileLine), "w")
+        file.write(user)
         file.close()
-        # This function saves the location of the file the user inputed
+    except:
+        appAlive = False
 
-    saveAsBtn = Button(saveAsWin, text = "Save", command = lambda: saveName())
-    saveAsBtn.place(relx = 0, rely = 0, relwidth=1.0, relheight = 0.2)
-    # declares button
-
-    saveAsEditor = Text(saveAsWin)
-    saveAsEditor.place(relx = 0, rely = 0.2, relwidth=1.0, relheight = 0.8)
-    # delares text editor
-
-    def tab(arg):
-        saveAsEditor.insert(INSERT, " " * configFile["python-indent-spacing"])
-        return 'break'
-    saveAsEditor.bind("<Tab>", tab)
-    # binds tab key to appropriate spacing 
-        
-
-    saveAsBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
-    saveAsEditor.configure(background=styleSheet["bg-color"], foreground = styleSheet["font-color"])
-    saveAsEditor.configure(insertbackground=styleSheet["curser-color"], highlightthickness = 0, bd = 0)
-    # configures window to match styling
-    saveAsWin.mainloop()
 # Function for save as button
 
 def executeCode():

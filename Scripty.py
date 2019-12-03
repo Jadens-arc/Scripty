@@ -60,7 +60,10 @@ window = Tk()
 window.geometry("550x350")
 # ^ declared window and sets size (in pixels)
 
-fileLine = filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py")))
+if sys.argv[-1] == "Scripty.py":
+    fileLine = filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py")))
+else:
+    fileLine = 'Projects/' + str(sys.argv[-1])
 
 window.title(str(fileLine))
 # ^  find the arument for which file to edit in the terminal

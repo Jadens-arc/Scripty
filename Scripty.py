@@ -10,10 +10,12 @@ import os
 try:
     from tkinter import *
     from tkinter import messagebox
+    from tkinter import filedialog
 except:
     os.system('sudo apt-get install python3-tk')
     from tkinter import *
     from tkinter import messagebox
+    from tkinter import filedialog
 # Checks if tkinter is installed
 # if not then installs it
 # used for UI
@@ -58,7 +60,8 @@ window = Tk()
 window.geometry("550x350")
 # ^ declared window and sets size (in pixels)
 
-fileLine = 'Projects/' + str(sys.argv[-1])
+fileLine = filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py")))
+
 window.title(str(fileLine))
 # ^  find the arument for which file to edit in the terminal
 # and sets it as the title of the window

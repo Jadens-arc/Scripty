@@ -132,12 +132,18 @@ def saveShortCut(arg):
 # This function maps the save function to work with a keyboard shortcut
 
 def openWindow():
-    global editor
+    global editor, fileLine
     openFile = str(filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py"))))
     editor.delete('1.0', END)
-    openFile = open(openFile)
-    openFile = openFile.read()
-    editor.insert(INSERT, openFile)
+    openFileData = open(openFile)
+    openFileData = openFileData.read()
+    editor.insert(INSERT, openFileData)
+    fileLine = openFile
+    i = 0
+    while i < len(fileLine):
+        if '/' in fileLine:
+            fileLine.replace(fileLine[i], "")
+        i += 1
     # redraw the editor but skinner and left sided
 # This function allows the user to open muiltiple files
 

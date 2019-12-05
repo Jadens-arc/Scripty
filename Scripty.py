@@ -69,13 +69,23 @@ window.title(str(fileLine))
 # ^  find the arument for which file to edit in the terminal
 # and sets it as the title of the window
 
-
 try:
-    currFile = open(str(fileLine))
+    try:
+        currFile = open(str(fileLine))
+    except:
+        newFile = open(str(fileLine), "w")
+        newFile.close()
+        currFile = open(str(fileLine))
 except:
-    newFile = open(str(fileLine), "w")
-    newFile.close()
-    currFile = open(str(fileLine))
+    i = 0
+    while '/' in fileLine:
+        fileLine.replace(fileLine[i], "")
+    try:
+        currFile = open(str(fileLine))
+    except:
+        newFile = open(str(fileLine), "w")
+        newFile.close()
+        currFile = open(str(fileLine))
 # This tests to see if the file the user inputed exists other wise it will create a new one
 
 
@@ -120,6 +130,16 @@ def save():
 def saveShortCut(arg):
     save()
 # This function maps the save function to work with a keyboard shortcut
+
+def open():
+    global editor
+    openFile = str(filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py"))))
+    editor.delete('1.0', END)
+    openFile = open(openFile)
+    openFile = openFile.read()
+    editor.insert(INSERT, openFile)
+    # redraw the editor but skinner and left sided
+# This function allows the user to open muiltiple files
 
 def saveAs():
     global fileLine, appAlive
@@ -228,23 +248,27 @@ def autoSave():
 # function for auto save
 
 runBtn = Button(window, text = "Run", command = lambda: run())
-runBtn.place(relx = 0, rely = 0, relwidth = 0.225, relheight = 0.07)
+runBtn.place(relx = 0, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares run button 
 
 saveBtn = Button(window, text = "Save", command = lambda: save())
-saveBtn.place(relx = 0.225, rely = 0, relwidth = 0.225, relheight = 0.07)
+saveBtn.place(relx = 0.18, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares save button 
 
 saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
-saveAsBtn.place(relx = 0.450, rely = 0, relwidth = 0.225, relheight = 0.07)
+saveAsBtn.place(relx = 0.36, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares save as button 
 
+openBtn = Button(window, text = "Open", command = lambda: open())
+openBtn.place(relx = 0.54, rely = 0, relwidth = 0.18, relheight = 0.07)
+# delcares open button
+
 clearBtn = Button(window, text = "Clear", command = lambda: clear())
-clearBtn.place(relx = 0.675, rely = 0, relwidth = 0.225, relheight = 0.07)
+clearBtn.place(relx = 0.72, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares clear button 
 
 settingsBtn = Button(window, text = configFile["settings-icon"], command = lambda: settings())
-settingsBtn.place(relx = 0.90, rely = 0, relwidth = 0.1, relheight = 0.07)
+settingsBtn.place(relx = 0.9, rely = 0, relwidth = 0.1, relheight = 0.07)
 # delcares settings button 
 
 def tab(arg):
@@ -325,6 +349,8 @@ saveAsBtn.configure(background=styleSheet["button-color"], foreground = styleShe
 runBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 
 saveBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
+
+openBtn.configure(background=styleSheet["button-color"], foreground = styleSheet["font-color"], highlightthickness = 0, bd = 0)
 # configures buttons and text editor to match style 
 
 autoSaveThread = threading.Thread(target = autoSave, name = "autosave1")

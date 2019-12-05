@@ -131,7 +131,7 @@ def saveShortCut(arg):
     save()
 # This function maps the save function to work with a keyboard shortcut
 
-def open():
+def openWindow():
     global editor
     openFile = str(filedialog.asksaveasfilename(initialdir = "~/Scripty/Projects",title = "Select file",filetypes = (("All Files","*.*"),("C++","*.cpp"), ("Java", "*.java"), ("Python", "*.py"))))
     editor.delete('1.0', END)
@@ -259,7 +259,7 @@ saveAsBtn = Button(window, text = "Save As", command = lambda: saveAs())
 saveAsBtn.place(relx = 0.36, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares save as button 
 
-openBtn = Button(window, text = "Open", command = lambda: open())
+openBtn = Button(window, text = "Open", command = lambda: openWindow())
 openBtn.place(relx = 0.54, rely = 0, relwidth = 0.18, relheight = 0.07)
 # delcares open button
 

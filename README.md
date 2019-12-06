@@ -24,7 +24,7 @@ python3 Scripty.py [Your File]
 ```
 This will then bring up a window for you to select a file
 
-![Image of Scripty running](https://i.postimg.cc/HkR1SSNz/IMAGE3.png)
+![](https://i.postimg.cc/wTGGmr2s/Screenshot-2019-12-05-at-8-08-37-PM.png)
 
 Projects you create will be stored in the /Projects/ directory
 

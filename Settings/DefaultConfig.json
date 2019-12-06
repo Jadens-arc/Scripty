@@ -17,8 +17,8 @@
     
     "settings-icon": "⚙",
 
-    "run-shortcut": "<Alt-r>",
-    "save-shortcut": "<Alt-s>",
+    "run-shortcut": "<Control-Key-r>",
+    "save-shortcut": "<Control-Key-s>",
 
     "auto-complete": false,
 

@@ -35,11 +35,11 @@ These projects will be gitignored by default
 ### Keyboard Shortcuts:
 - Compile and Execute Code:
 ```
-Alt - r
+Ctrl - r
 ```
 - Save Code:
 ```
-Alt - s
+Ctrl - s
 ```
 
 ### Installing Dependencies:

@@ -99,6 +99,7 @@ clear-on-run | Toggle for clearing terminal when a program is ran
  - McLaren
  - Coral
  - Panda
+ - Sealab
 
 ## Creating a Theme:
 **Themes must be in JSON format and must be saved in the Themes folder.**

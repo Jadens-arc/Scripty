@@ -144,6 +144,7 @@ def openWindow():
         if '/' in fileLine:
             fileLine.replace(fileLine[i], "")
         i += 1
+    window.title(str(fileLine))
     # redraw the editor but skinner and left sided
 # This function allows the user to open muiltiple files
 
@@ -157,6 +158,7 @@ def saveAs():
         file.close()
     except:
         appAlive = False
+    window.title(str(fileLine))
 
 # Function for save as button
 
@@ -364,4 +366,10 @@ autoSaveThread.start()
 # starts autosave thread
 
 window.mainloop()
+
+
+
+
+
+
 

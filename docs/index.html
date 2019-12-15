@@ -30,44 +30,23 @@ img {margin-bottom: -8px;}
       <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="window.location.href = 'https://github.com/Jadens-arc/Scripty/archive/master.zip';", download>
         <i class="fa fa-download"></i> Download Application
       </button>
-    
+      
     </div>
     <div class="w3-col l4 m6">
       <div class="w3-center w3-hide-large w3-hide-medium">
-        <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-          <i class="fa fa-download", onclick="window.location.href = 'https://github.com/Jadens-arc/Scripty/archive/master.zip';"></i> Download Application
+        <button class="w3-button w3-block w3-padding-large" onclick="                      document.getElementById('download').style.display='block'">
+          <i class="fa fa-download", onclick="window.location.href = 'https://github.com/Jadens-arc/Scripty/archive/master.zip';", download></i> Download Application
         </button>
-        
+        <br><br><br><br>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Modal -->
+</body>
 
-
-<script>
-// Slideshow
-var slideIndex = 1;
-showDivs(slideIndex);
-
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
-</script>
-
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<footer class="w3-container w3-teal w3-center">
   <p>Find me on social media.</p>
   <i class="fab fa-youtube w3-hover-opacity",  onclick="window.location.href = 'https://www.youtube.com/channel/UCYksmg8KEj3cFxgknccIazw';", target="_blank" ></i>
   <i class="fab fa-instagram w3-hover-opacity",  onclick="window.location.href = 'https://www.instagram.com/whatwoah';",  target="_blank"></i>
@@ -75,6 +54,4 @@ function showDivs(n) {
   <i class="fab fa-linkedin w3-hover-opacity",  onclick="window.location.href = 'https://www.linkedin.com/in/jaden-arceneaux/';", target="_blank"></i>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
-  
-</body>
 </html>

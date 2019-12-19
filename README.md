@@ -119,13 +119,13 @@ ex. Scripty/Settings/Themes$ nano mytheme.json
     "curser-color": "[Color]"
 }
 ```
-Setting | Function
------------- | -------------
-curser-color | The color of your curser (in hexadecimal or by name)
-bg-color | Background color of the editor (in hexadecimal or by name)
-font-color | Color of text in the editor (in hexadecimal or by name)
-button-color | Color of buttons in the editor (in hexadecimal or by name)
-font | Font of the editor
+| Setting      | Function                                                   |
+|--------------|------------------------------------------------------------|
+| curser-color | The color of your curser (in hexadecimal or by name)       |
+| bg-color     | Background color of the editor (in hexadecimal or by name) |
+| font-color   | Color of text in the editor (in hexadecimal or by name)    |
+| button-color | Color of buttons in the editor (in hexadecimal or by name) |
+| font         | Font of the editor                                         |
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTc2ODExMjUwLC0xMDA3OTE4Mzk5LC0yND

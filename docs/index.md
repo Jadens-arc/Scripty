@@ -1,6 +1,5 @@
 
 
-
 # Scripty:
 An Open-Source IDE for ChromeOS by Jaden Arceneaux. This project was created due to a distinct lack of good IDEs for ChromeOS. The goal of Scripty is to supplement this problem. Scripty takes advantage of the built-in Linux sandbox in Chrome Books to provide the best coding experience on ChromeOS.
 
@@ -65,25 +64,25 @@ $ Scripty [your file]
 ```
 
 # Settings:
-Setting | Function
------------- | -------------
-Theme | Changes the theme(color scheme) of the editor
-font-size | Font size of the editor
-line-wrap | Determines whether the text will wrap to a new line when it reaches the edge of the screen
-line-wrap-type | Determines whether the entire word will wrap or just the overflowing character (WORD or CHAR)
-auto-save | Toggle for automatic saving
-auto-save-interval | Determines the frequency(in seconds) a save will occur
-python-indent-spacing | Determines the indent spacing for Python code
-java-indent-spacing | Determines the indent spacing for Java code
-cpp-indent-spacing | Determines the indent spacing for C++ code
-default-indent-spacing | Determines the indent spacing for any programming language not listed above
-auto-indent | **WORK IN PROGRESS** Toggle for auto-indent
-settings-icon | Icon used for the settings button
-run-shortcut | Keyboard shortcut for compiling and executing code
-save-shortcut | Keyboard shortcut for saving code
-auto-complete | Toggle for smart completion of code
-run-lock | Toggle for the run lock which disables editing of code while code is running
-clear-on-run | Toggle for clearing terminal when a program is ran
+| Setting                | Function                                                                                      |
+|------------------------|-----------------------------------------------------------------------------------------------|
+| Theme                  | Changes the theme(color scheme) of the editor                                                 |
+| font-size              | Font size of the editor                                                                       |
+| line-wrap              | Determines whether the text will wrap to a new line when it reaches the edge of the screen    |
+| line-wrap-type         | Determines whether the entire word will wrap or just the overflowing character (WORD or CHAR) |
+| auto-save              | Toggle for automatic saving                                                                   |
+| auto-save-interval     | Determines the frequency(in seconds) a save will occur                                        |
+| python-indent-spacing  | python-indent-spacing                                                                         |
+| java-indent-spacing    | java-indent-spacing                                                                           |
+| cpp-indent-spacing     | cpp-indent-spacing                                                                            |
+| default-indent-spacing | default-indent-spacing                                                                        |
+| auto-indent            | auto-indent                                                                                   |
+| settings-icon          | settings-icon                                                                                 |
+| run-shortcut           | run-shortcut                                                                                  |
+| save-shortcut          | save-shortcut                                                                                 |
+| auto-complete          |                                                                                               |
+| run-lock               |                                                                                               |
+| clear-on-run           |                                                                                               |
 
 # Themes:
 ## Available Themes:
@@ -120,13 +119,13 @@ ex. Scripty/Settings/Themes$ nano mytheme.json
     "curser-color": "[Color]"
 }
 ```
-Setting | Function
------------- | -------------
-curser-color | The color of your curser (in hexadecimal or by name)
-bg-color | Background color of the editor (in hexadecimal or by name)
-font-color | Color of text in the editor (in hexadecimal or by name)
-button-color | Color of buttons in the editor (in hexadecimal or by name)
-font | Font of the editor
+| Setting      | Function                                                   |
+|--------------|------------------------------------------------------------|
+| curser-color | The color of your curser (in hexadecimal or by name)       |
+| bg-color     | Background color of the editor (in hexadecimal or by name) |
+| font-color   | Color of text in the editor (in hexadecimal or by name)    |
+| button-color | Color of buttons in the editor (in hexadecimal or by name) |
+| font         | Font of the editor                                         |
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTc2ODExMjUwLC0xMDA3OTE4Mzk5LC0yND

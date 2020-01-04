@@ -181,6 +181,10 @@ def executeCode():
         os.system('./' + fileLine[:-4])
     elif '.cs' in fileLine:
         os.system('dotnet run ' + fileLine)
+    elif '.c' in fileLine:
+        os.system('gcc ' + str(fileLine) + ' -o ' + fileLine[:-2])
+        os.system('cd / && .' + fileLine[:-2])
+
     # finds which programming language the program is written in
     # runs code using that language
 
@@ -366,6 +370,11 @@ autoSaveThread.start()
 # starts autosave thread
 
 window.mainloop()
+
+
+
+
+
 
 
 

@@ -178,7 +178,7 @@ def executeCode():
         os.system('cd Projects && java ' + (fileLine[:-5]).replace('Projects/', ''))
     elif '.cpp' in fileLine:
         os.system('g++ ' + str(fileLine) + ' -o ' + fileLine[:-4])
-        os.system('./' + fileLine[:-4])
+        os.system('cd / && .' + fileLine[:-4])
     elif '.cs' in fileLine:
         os.system('dotnet run ' + fileLine)
     elif '.c' in fileLine:

@@ -184,6 +184,8 @@ def executeCode():
     elif '.c' in fileLine:
         os.system('gcc ' + str(fileLine) + ' -o ' + fileLine[:-2])
         os.system('cd / && .' + fileLine[:-2])
+    elif '.js' in fileLine:
+        os.system('node ' + str(fileLine))
 
     # finds which programming language the program is written in
     # runs code using that language
@@ -290,6 +292,8 @@ def tab(arg):
         editor.insert(INSERT, " " * configFile["java-indent-spacing"])
     elif '.cpp' in str(fileLine):
         editor.insert(INSERT, " " * configFile["cpp-indent-spacing"])
+    elif '.js' in str(fileLine):
+        editor.insert(INSERT, " " * configFile["js-indent-spacing"])
     else:
         editor.insert(INSERT, " " * configFile["default-indent-spacing"])
     return 'break'
@@ -370,6 +374,7 @@ autoSaveThread.start()
 # starts autosave thread
 
 window.mainloop()
+
 
 
 
